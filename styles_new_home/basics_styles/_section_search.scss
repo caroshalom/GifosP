@@ -1,0 +1,96 @@
+main{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    .search_section{
+        margin-top: 10px;
+        display: flex;
+        flex-flow: column wrap;
+        width: 90%;
+        
+        
+        h2{
+            width: 95%;
+            text-align: center;
+            font-size: 25px;
+        }
+        
+        img{
+            margin-top: 30px;
+            width: 82%;
+            align-self: center;
+        }
+
+        .busqueda{
+            display: flex;
+            flex-flow: column;
+            padding: 10px 20px;
+            border: 1px solid #572EE5;
+            border-radius: 27px;
+            justify-content: space-between;
+
+            
+
+            .resultado{
+                
+                display: none;
+                margin-left: 10px;
+                border-top: 1px solid rgb(196, 196, 196);
+                margin-top: 20px;
+                .sugerencia{
+                    display: flex;
+                    margin: 10px 0;
+                    padding: 5px;
+                    &:hover{
+                        background-color: rgba(191, 189, 189, 0.3);
+
+                    }
+                }
+            }
+            .search{
+
+                display: flex;
+                .icon_close{
+                    display: none;
+                }
+                .input_search{
+                    height: 22px;
+                    border: none;
+                    width: 100%;
+                    margin: 0 10px;
+                    padding-left: 10px;
+                }
+    
+                .icons{
+                    width: 20px;
+                    height: 20px;
+                    margin: 0;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .busqueda{
+                display: none;
+            }
+
+        }
+
+        h3{
+            font-size: 16px;
+            align-self: center;
+            margin: 44px 0 5px 0;
+            font-weight: 800;
+        }
+        p{
+            font-size: 14px;
+            align-self: center;
+            width: 70%;
+            text-align: center;
+            font-weight: 400;
+        }
+    }
+}

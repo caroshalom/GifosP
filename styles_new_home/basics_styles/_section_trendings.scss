@@ -1,0 +1,19 @@
+main{
+    .trendings{
+        margin-top: 90px;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+        h2{
+            font-size: 20px;
+        }
+
+        p{
+            font-size: 16px;
+            text-align: center;
+            width: 60%;
+            font-family: Roboto, sans-serif;
+        }
+    }
+}

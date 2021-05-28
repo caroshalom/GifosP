@@ -1,0 +1,109 @@
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+    // HEADER STYLES FOR DESKTOP
+    header{
+        
+        height: unset;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 22px 156px;
+        
+        .burger_menu_btn{
+            display: none;
+
+        }
+        .menu_navegacion{
+
+            background-color: white;
+            position: static;   
+            width: unset;
+            height: unset;
+    
+            display: flex;
+            flex-flow: row wrap;
+            width: 45%;
+    
+    
+            ul{
+                margin-top: 0;
+                width: 100%;
+                list-style: none;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                
+                img{
+                    display: block;
+                    
+                    &:hover{
+                        
+                        cursor: pointer;
+                    }
+                }
+                li{
+                    padding: 15px 0;
+                    display: flex ;
+                    flex-flow: column;
+                    align-items: center;
+                    span{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // SECTION SEARCH STYLES FOR DESKTOP
+    main{
+
+        .search_section{
+            width: 33%;
+            margin-top: 76px;
+            h2{
+                width: 70%;
+                align-self: center;
+            }
+
+            h3{
+                margin-top: 73px;
+                font-size: 18px;
+            }
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+    // SECTION TRENDINGS STYLE FOR DESKTOP
+
+    main{
+        .trendings{
+            margin-top: 162px;
+
+            h2{
+                font-size: 25px;
+                margin-bottom: 12px;
+            }
+
+            p{
+                font-size: 18px;
+                width: unset;
+            }
+        }
+    }
+
+    // FOOTER STYLES FOR DESKTOP
+    footer{
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        padding: 0 156px;
+
+        .social_media{
+            width: 10%;
+            margin-left: 10px;
+        }
+        p{
+            margin-left: auto;
+        }
+    }
+}

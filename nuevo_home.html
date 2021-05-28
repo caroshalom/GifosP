@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <!-- ROBOTO PARA LOS LOGOS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="./styles_new_home/basics_styles/style.css">
+    <title>GIFOS</title>
+</head>
+<body>
+    <div class="bar"></div>
+    <header class="">
+        
+        <img src="assets/logo-mobile.svg" alt="GIFOS_LOGO" class="logo">
+        <img src="assets/burger.svg" alt="BURGER_BTN" class="burger_menu_btn">
+        <nav class="menu_navegacion">
+            <ul>
+                <li>Modo Nocturno <span></span></li>
+                <li>Favoritos <span></span></li>
+                <li>Mis GiFOS <span></span></li>
+                <img src="assets/button-crear-gifo.svg" alt="">
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="search_section">
+            
+            <h2>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span> </h2>
+
+            <img src="assets/ilustra_header.svg" alt="Ilustracion_header">
+
+            <div class="busqueda" id="despliegue">
+                
+                <div class="search">
+
+                    <img src="assets/close.svg" alt="close_seacrh" class="icon_close icons">
+    
+                    <input type="text" class="input_search" id="site-search" name="site-search" placeholder="Busca GIFOS y más">
+    
+                    <img src="assets/icon-search.svg" alt="seach_icon" class="icon_search icons">
+                    
+                </div>
+            
+                <div class="resultado" id="resultado">
+
+                    <div class="sugerencia" onclick="cuadrosBusqueda(1)">
+                        
+                    </div>
+                    <div class="sugerencia" onclick="cuadrosBusqueda(2)">
+            
+                    </div>
+                    <div class="sugerencia" onclick="cuadrosBusqueda(3)">
+            
+                    </div>
+                </div>
+                
+            </div>
+            <h3>Trending:</h3>
+            <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
+
+        </section>
+
+        <section class="trendings">
+            <h2>Trending GIFOS</h2>
+            <p>Mira los últimos 
+            GIFOS de nuestra comunidad.</p>
+
+            <div class="gif-tendencias">
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <h2>Compartir en:</h2>
+        <div class="social_media">
+            <img src="assets/icon_facebook.svg" alt="facebook">
+            <img src="assets/icon-twitter.svg" alt="facebook">
+            <img src="assets/icon_instagram.svg" alt="facebook">
+        </div>
+        <p>© GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+    <div class="bar"></div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
