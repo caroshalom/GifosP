@@ -1,0 +1,83 @@
+$dark_background: #37383c;
+$dark_trendings: #222326;
+$gray_secundary: #5e5e61;
+$green_secundary: #50E3C2;
+$text_normal: #fff;
+
+
+body{
+    background-color: $dark_background;
+}
+.bar{
+    background-color: black;
+}
+
+.menu_navegacion{
+    background-color: black;
+
+
+    li{
+        color: $text_normal;
+    }
+}
+
+.search_section{
+
+    input{
+        background-color: transparent;
+        color: $text_normal;
+    }
+
+    .sugerencia{
+        color: $text_normal;
+    }
+
+    .busqueda{
+        border: 1px solid white;
+    }
+
+
+    h2{
+        color: $text_normal;
+        span{
+            color: $green_secundary;
+        }
+    }
+
+    h3{
+        color: $text_normal;
+    }
+    p{
+        color: $text_normal;
+    }
+}
+
+.trendings{
+    background-color: $dark_trendings;
+    width: 100%;
+    h2{
+        color: $text_normal;
+    }
+    p{
+        color: $text_normal;
+    }
+}
+
+// DESKTOP
+@media only screen and (min-width: 992px) {
+    .menu_navegacion{
+        background-color: transparent;
+        
+        ul{
+            background-color: transparent;
+        }
+        li{
+            color: $text_normal;
+            font-weight: 500;
+            background-color: transparent;
+            &:hover{
+                color: $green_secundary;
+            }
+        }
+    }
+}

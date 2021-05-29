@@ -1,0 +1,53 @@
+.bar {
+  background-color: #572EE5;
+}
+
+.menu_navegacion {
+  background-color: #572ee5f0;
+}
+
+.menu_navegacion li {
+  color: white;
+}
+
+.search_section h2 {
+  color: #572EE5;
+}
+
+.search_section h2 span {
+  color: #50E3C2;
+}
+
+.search_section .busqueda {
+  border: 1px solid #572EE5;
+}
+
+.search_section h3 {
+  color: #572EE5;
+}
+
+.search_section p {
+  color: #572EE5;
+}
+
+.trendings h2 {
+  color: #572EE5;
+}
+
+.trendings p {
+  color: black;
+}
+
+@media only screen and (min-width: 992px) {
+  .menu_navegacion {
+    background-color: transparent;
+  }
+  .menu_navegacion li {
+    color: #572EE5;
+    font-weight: 500;
+  }
+  .menu_navegacion li:hover {
+    color: #50E3C2;
+  }
+}
+/*# sourceMappingURL=light_theme.css.map */

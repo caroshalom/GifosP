@@ -1,0 +1,60 @@
+$purple_primary: #572EE5;
+$green_secundary: #50E3C2;
+$text_normal: #9CAFC3;
+
+
+.bar{
+    background-color: $purple_primary;
+}
+
+.menu_navegacion{
+    background-color: #572ee5f0;
+
+    li{
+        color: white;
+    }
+}
+
+.search_section{
+    h2{
+        color: $purple_primary;
+        span{
+            color: $green_secundary;
+        }
+    }
+
+    .busqueda{
+        border: 1px solid $purple_primary;
+    }
+    h3{
+        color: $purple_primary;
+    }
+    p{
+        color: $purple_primary;
+    }
+}
+
+.trendings{
+    
+    h2{
+        color: $purple_primary;
+    }
+    p{
+        color: black;
+    }
+}
+
+// DESKTOP
+@media only screen and (min-width: 992px) {
+    .menu_navegacion{
+        background-color: transparent;
+    
+        li{
+            color: $purple_primary;
+            font-weight: 500;
+            &:hover{
+                color: $green_secundary;
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+body {
+  background-color: #37383c;
+}
+
+.bar {
+  background-color: black;
+}
+
+.menu_navegacion {
+  background-color: black;
+}
+
+.menu_navegacion li {
+  color: #fff;
+}
+
+.search_section input {
+  background-color: transparent;
+  color: #fff;
+}
+
+.search_section .sugerencia {
+  color: #fff;
+}
+
+.search_section .busqueda {
+  border: 1px solid white;
+}
+
+.search_section h2 {
+  color: #fff;
+}
+
+.search_section h2 span {
+  color: #50E3C2;
+}
+
+.search_section h3 {
+  color: #fff;
+}
+
+.search_section p {
+  color: #fff;
+}
+
+.trendings {
+  background-color: #222326;
+  width: 100%;
+}
+
+.trendings h2 {
+  color: #fff;
+}
+
+.trendings p {
+  color: #fff;
+}
+
+@media only screen and (min-width: 992px) {
+  .menu_navegacion {
+    background-color: transparent;
+  }
+  .menu_navegacion ul {
+    background-color: transparent;
+  }
+  .menu_navegacion li {
+    color: #fff;
+    font-weight: 500;
+    background-color: transparent;
+  }
+  .menu_navegacion li:hover {
+    color: #50E3C2;
+  }
+}
+/*# sourceMappingURL=dark_theme.css.map */

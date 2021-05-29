@@ -137,7 +137,6 @@ main .search_section .busqueda {
       -ms-flex-flow: column;
           flex-flow: column;
   padding: 10px 20px;
-  border: 1px solid #572EE5;
   border-radius: 27px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -161,6 +160,7 @@ main .search_section .busqueda .resultado .sugerencia {
 
 main .search_section .busqueda .resultado .sugerencia:hover {
   background-color: rgba(191, 189, 189, 0.3);
+  cursor: pointer;
 }
 
 main .search_section .busqueda .search {
@@ -215,6 +215,7 @@ main .search_section p {
 }
 
 main .trendings {
+  padding: 46px 0;
   margin-top: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -297,7 +298,6 @@ footer p {
     display: none;
   }
   header .menu_navegacion {
-    background-color: white;
     position: static;
     width: unset;
     height: unset;
