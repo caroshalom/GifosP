@@ -54,6 +54,7 @@ main{
                 display: flex;
                 .icon_close{
                     display: none;
+                    transform: scale(0.75);
                 }
                 .input_search{
                     height: 22px;

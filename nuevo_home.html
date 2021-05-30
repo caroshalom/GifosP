@@ -15,10 +15,10 @@
     
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="./styles_new_home/basics_styles/style.css">
-    <!-- LIGHT THEMES -->
-    <link rel="stylesheet" href="./styles_new_home/light_theme/light_theme.css">
-    <!-- DARK THEMES -->
-    <link rel="stylesheet" href="./styles_new_home/dark_theme/dark_theme.css">
+
+    <!-- THEMES -->
+    <link rel="stylesheet" href="./styles_new_home/light_theme/light_theme.css" class="themeSheet">
+
     <title>GIFOS</title>
 </head>
 <body>
@@ -29,10 +29,10 @@
         <img src="assets/burger.svg" alt="BURGER_BTN" class="burger_menu_btn">
         <nav class="menu_navegacion">
             <ul>
-                <li>Modo Nocturno <span></span></li>
-                <li>Favoritos <span></span></li>
-                <li>Mis GiFOS <span></span></li>
-                <img src="assets/button-crear-gifo.svg" alt="">
+                <li id="changeTheme">Modo Nocturno <span></span></li>
+                <li class="option">Favoritos <span></span></li>
+                <li class="option">Mis GiFOS <span></span></li>
+                <img src="assets/button-crear-gifo.svg" alt="" class="create_btn">
             </ul>
 
         </nav>
@@ -100,6 +100,6 @@
     <div class="bar"></div>
 
     <script src="scripts/script.js"></script>
-    <script src="scripts/menu_mobile.js"></script>
+    <script src="scripts/funciones_pagina.js"></script>
 </body>
 </html>

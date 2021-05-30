@@ -1,34 +1,34 @@
 // Cambiar Hoja de estilo
 
-function addCss(fileName) {
+// function addCss(fileName) {
 
-    let theme = sessionStorage.getItem("tema");
-    console.log(fileName);
-    if (fileName === undefined) {
-        if (theme === null) {
-            sessionStorage.setItem("tema", "oscuro");
-        }
-        console.log('*************RECARGA**********')
-        if (theme == 'oscuro') {
-            document.styleSheets[1].disabled = true;
-            document.styleSheets[2].disabled = false;
-        } else if (theme == 'claro') {
-            document.styleSheets[1].disabled = false;
-            document.styleSheets[2].disabled = true;
-        }
-    }
+//     let theme = sessionStorage.getItem("tema");
+//     console.log(fileName);
+//     if (fileName === undefined) {
+//         if (theme === null) {
+//             sessionStorage.setItem("tema", "oscuro");
+//         }
+//         console.log('*************RECARGA**********')
+//         if (theme == 'oscuro') {
+//             document.styleSheets[1].disabled = true;
+//             document.styleSheets[2].disabled = false;
+//         } else if (theme == 'claro') {
+//             document.styleSheets[1].disabled = false;
+//             document.styleSheets[2].disabled = true;
+//         }
+//     }
 
-    if (fileName == 1 && theme == 'oscuro') {
-        sessionStorage.setItem("tema", "claro");
-        document.styleSheets[1].disabled = false;
-        document.styleSheets[2].disabled = true;
-    } else if (fileName == 2 && theme == 'claro') {
-        sessionStorage.setItem("tema", "oscuro");
-        document.styleSheets[1].disabled = true;
-        document.styleSheets[2].disabled = false;
-    }
+//     if (fileName == 1 && theme == 'oscuro') {
+//         sessionStorage.setItem("tema", "claro");
+//         document.styleSheets[1].disabled = false;
+//         document.styleSheets[2].disabled = true;
+//     } else if (fileName == 2 && theme == 'claro') {
+//         sessionStorage.setItem("tema", "oscuro");
+//         document.styleSheets[1].disabled = true;
+//         document.styleSheets[2].disabled = false;
+//     }
 
-}
+// }
 function navegar() {
     location.href = '/upload.html';
 }
@@ -56,14 +56,15 @@ document.getElementById('site-search').addEventListener('input', async function 
     }
 });
 
-function temas() {
-    var tema = document.getElementById("despliegue").style.display
-    if (tema == "block") {
-        document.getElementById("despliegue").style.display = "none";
-    } else {
-        document.getElementById("despliegue").style.display = "block"
-    }
-}
+// function temas() {
+//     var tema = document.getElementById("despliegue").style.display
+//     if (tema == "block") {
+//         document.getElementById("despliegue").style.display = "none";
+//     } else {
+//         document.getElementById("despliegue").style.display = "block"
+//     }
+// }
+
 let api_key = 'api_key=aiSyvuotTBkiW8LiDS2grIV7FM6KZv9T';
 async function searchGif(termino, limit) {
     let urlbusqueda = [];
