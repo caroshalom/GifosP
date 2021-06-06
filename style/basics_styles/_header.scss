@@ -10,7 +10,13 @@ header{
     padding: 22px 22px 22px 22px;
     z-index: 1;
     height: 95px;
-
+    .logo:hover{
+        cursor: pointer;
+        
+    }
+    .burger_menu_btn{
+        font-size: 20px;
+    }
     .menu_navegacion{
         position: absolute;
         top: -100vh;
@@ -43,7 +49,9 @@ header{
 
                 &:hover{
                     cursor: pointer;
+                    text-decoration: underline #50E3C2;
                 }
+                
                 span{
                     margin-top: 10px;
                     border-bottom: 1px solid;

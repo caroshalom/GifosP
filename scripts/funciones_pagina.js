@@ -16,37 +16,17 @@ const closeMenu = () => {
 
 const btn_menu = document.querySelector(".burger_menu_btn")
 btn_menu.addEventListener("click", () => {
+    
+    if (btn_menu.className === "fas fa-bars burger_menu_btn"){
 
-    switch (btn_menu.getAttribute("src")) {
-
-        case "assets/burger.svg":
-            
-            showMenu()
-            btn_menu.setAttribute("src","assets/close.svg")
-            break;
-
-        case "assets/close.svg":
-            
-            closeMenu()
-            btn_menu.setAttribute("src","assets/burger.svg")
-            break;
-
-        case "assets/burger-modo-noct.svg":
-            
-            showMenu()
-            btn_menu.setAttribute("src","assets/close-modo-noct.svg")
-            break;
-
-        case "assets/close-modo-noct.svg":
-            
-            closeMenu()
-            btn_menu.setAttribute("src","assets/burger-modo-noct.svg")
-            break;
-        
-        
-        default:
-            break;
+        btn_menu.className = "fas fa-times burger_menu_btn"
+        showMenu()
+    }else{
+        btn_menu.className = "fas fa-bars burger_menu_btn"
+        closeMenu()
     }
+    
+    
 })
 
 
@@ -60,12 +40,12 @@ const setTheme = () => {
 
         if(localStorage.getItem("theme") === "dark"){
             changeThemeBtn.innerHTML = "Modo Diurno <span></span>"
-            themeSheet.setAttribute("href","./styles_new_home/dark_theme/dark_theme.css")
+            themeSheet.setAttribute("href","./style/dark_theme/dark_theme.css")
             changeAssests(localStorage.getItem("theme"))
 
         }else{
             changeThemeBtn.innerHTML = "Modo Nocturno <span></span>"
-            themeSheet.setAttribute("href","./styles_new_home/light_theme/light_theme.css")
+            themeSheet.setAttribute("href","./style/light_theme/light_theme.css")
             changeAssests(localStorage.getItem("theme"))
         }
 
@@ -83,9 +63,7 @@ function changeAssests(theme){
         if (window.screen.width >= 992) {
             document.querySelector(".logo").setAttribute("src","assets/logo-desktop.svg")
         }
-        document.querySelector(".burger_menu_btn").setAttribute("src","assets/burger.svg")
-        document.querySelector(".icon_search").setAttribute("src","assets/icon-search.svg")
-        document.querySelector(".icon_close").setAttribute("src","assets/close.svg")
+
         // CREATE GIFO BTN
         const crear_btn = document.querySelector(".create_btn")
         crear_btn.setAttribute("src","assets/button-crear-gifo.svg")
@@ -101,9 +79,7 @@ function changeAssests(theme){
         if (window.screen.width >= 992) {
             document.querySelector(".logo").setAttribute("src","assets/logo-modo-noc.svg")
         }
-        document.querySelector(".burger_menu_btn").setAttribute("src","assets/burger-modo-noct.svg")
-        document.querySelector(".icon_search").setAttribute("src","assets/icon-search-modo-noct.svg")
-        document.querySelector(".icon_close").setAttribute("src","assets/close-modo-noct.svg")
+
         // CREATE GIFO BTN
         const crear_btn = document.querySelector(".create_btn")
         crear_btn.setAttribute("src","assets/CTA-crear-gifo-modo-noc.svg")
@@ -131,14 +107,17 @@ changeThemeBtn.addEventListener("click", () => {
 // CLOSE SEARCH
 const input_search = document.querySelector(".input_search")
 const close_icon = document.querySelector(".icon_close")
+const div_search = document.querySelector(".search")
 
 input_search.addEventListener("input",() =>{
     if(input_search.value){
 
+        div_search.style.flexFlow = "row"
         close_icon.style.display = "block"
 
     }else{
         close_icon.style.display = "none"
+        div_search.style.flexFlow = "row-reverse"
     }
 })
 
@@ -146,12 +125,25 @@ close_icon.addEventListener("click", () =>{
     close_icon.style.display = "none"
     input_search.value = ""
     document.querySelector(".resultado").style.display = "none"
+    div_search.style.flexFlow = "row-reverse"
 })
+
+
+// BACK HOME
+const logo = document.querySelector(".logo")
+logo.addEventListener("click", () => window.location.href = "../index.html")
+
+
 
 
 
 // SETTHEME AL CARGAR LA PAGINA
 window.onload = () => {
+
+    setTheme()
+}
+
+window.onresize = () =>{
 
     setTheme()
 }

@@ -2,6 +2,10 @@
   background-color: #572EE5;
 }
 
+.burger_menu_btn {
+  color: #572EE5;
+}
+
 .menu_navegacion {
   background-color: #572ee5f0;
 }
@@ -18,6 +22,10 @@
   color: #50E3C2;
 }
 
+.search_section i {
+  color: #572EE5;
+}
+
 .search_section .busqueda {
   border: 1px solid #572EE5;
 }
@@ -30,12 +38,26 @@
   color: #572EE5;
 }
 
+.trendings {
+  background-color: #F3F5F8;
+}
+
 .trendings h2 {
   color: #572EE5;
 }
 
 .trendings p {
   color: black;
+}
+
+footer .social_media {
+  color: #9CAFC3;
+  font-size: 1.8rem;
+}
+
+footer .social_media i:hover {
+  color: #572EE5;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 992px) {

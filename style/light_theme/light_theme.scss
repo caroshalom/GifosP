@@ -1,12 +1,16 @@
 $purple_primary: #572EE5;
 $green_secundary: #50E3C2;
 $text_normal: #9CAFC3;
+$back_trending: #F3F5F8;
 
 
 .bar{
     background-color: $purple_primary;
 }
 
+.burger_menu_btn{
+    color: $purple_primary;
+}
 .menu_navegacion{
     background-color: #572ee5f0;
 
@@ -23,6 +27,9 @@ $text_normal: #9CAFC3;
         }
     }
 
+    i{
+        color: $purple_primary;
+    }
     .busqueda{
         border: 1px solid $purple_primary;
     }
@@ -36,11 +43,25 @@ $text_normal: #9CAFC3;
 
 .trendings{
     
+    background-color: $back_trending;
     h2{
         color: $purple_primary;
     }
     p{
         color: black;
+    }
+}
+
+footer{
+
+    .social_media{
+        color: $text_normal;
+        font-size: 1.8rem;
+
+        i:hover{
+            color: $purple_primary;
+            cursor: pointer;
+        }
     }
 }
 

@@ -30,6 +30,14 @@ header {
   height: 95px;
 }
 
+header .logo:hover {
+  cursor: pointer;
+}
+
+header .burger_menu_btn {
+  font-size: 20px;
+}
+
 header .menu_navegacion {
   position: absolute;
   top: -100vh;
@@ -81,6 +89,8 @@ header .menu_navegacion ul li {
 
 header .menu_navegacion ul li:hover {
   cursor: pointer;
+  -webkit-text-decoration: underline #50E3C2;
+          text-decoration: underline #50E3C2;
 }
 
 header .menu_navegacion ul li span {
@@ -167,12 +177,17 @@ main .search_section .busqueda .search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse;
+          flex-flow: row-reverse;
 }
 
 main .search_section .busqueda .search .icon_close {
   display: none;
-  -webkit-transform: scale(0.75);
-          transform: scale(0.75);
 }
 
 main .search_section .busqueda .search .input_search {
@@ -181,12 +196,6 @@ main .search_section .busqueda .search .input_search {
   width: 100%;
   margin: 0 10px;
   padding-left: 10px;
-}
-
-main .search_section .busqueda .search .icons {
-  width: 20px;
-  height: 20px;
-  margin: 0;
 }
 
 main .search_section .busqueda .search .icons:hover {
@@ -229,6 +238,7 @@ main .trendings {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 main .trendings h2 {

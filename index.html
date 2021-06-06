@@ -1,137 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/theme1.css">
 
-    <link rel="stylesheet" href="styles/theme2.css">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    <title>GifOS</title>
+    <!-- ROBOTO PARA LOS LOGOS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="./style/basics_styles/style.css">
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
 
+    <!-- THEMES -->
+    <link rel="stylesheet" href="./style/light_theme/light_theme.css" class="themeSheet">
 
+    <title>GIFOS</title>
 </head>
-
 <body>
+    <div class="bar"></div>
     <header class="">
+        
+        <img src="assets/logo-mobile.svg" alt="GIFOS_LOGO" class="logo">
+        <i class="fas fa-bars burger_menu_btn"></i>
+        <nav class="menu_navegacion">
+            <ul>
+                <li id="changeTheme">Modo Nocturno <span></span></li>
+                <li class="option favs">Favoritos <span></span></li>
+                <li class="option my_gifs">Mis GiFOS <span></span></li>
+                <img src="assets/button-crear-gifo.svg" alt="" class="create_btn">
+            </ul>
 
-        <div class="logo" onclick="window.location.reload(true)">
-            <img alt="logo" src="logo">
-        </div>
-        <div class="sup">
-            <button class="crear" onclick="navegar()">
-                Crear Guifos
-            </button>
-            <button class="elegir">
-                Elegir tema
-            </button>
-            <button class="arrow-down" onclick="temas()">
-                <img src="arrow" alt="" class="">
-            </button>
-            <button class="mis" onclick="desaparecer('super')">
-
-                Mis Guifos
-
-
-            </button>
-            <div class="rayita">
-
-            </div>
-
-        </div>
-        <div class="busqueda" id="despliegue">
-            <div onclick="addCss(1)" id="sailor-day">
-                <h3>Sailor Day</h3>
-            </div>
-            <div onclick="addCss(2)" id="sailor-night">
-                <h3>Sailor Night</h3>
-            </div>
-
-        </div>
-
+        </nav>
     </header>
-    <div class="busqueda">
-        <div>
-            <h3>Buscar</h3>
-        </div>
-        <label for="site-search"></label>
-        <input type="text" id="site-search" name="site-search"
-            placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" aria-label="Search through site content">
 
-        <button onclick="cuadrosBusqueda(0)"><img src="assets/CombinedShape.svg" alt=""> Buscar</button>
+    <main>
+        <section class="main_section search_section">
+            
+            <h2>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span> </h2>
 
-    </div>
-    <div class="busqueda" id="resultado">
-        <div onclick="cuadrosBusqueda(1)">
+            <img src="assets/ilustra_header.svg" alt="Ilustracion_header">
 
-        </div>
-        <div onclick="cuadrosBusqueda(2)">
+            <div class="busqueda" id="despliegue">
+                
+                <div class="search">
 
-        </div>
-        <div onclick="cuadrosBusqueda(3)">
+                    <i class="fas fa-search icons"></i>
+    
+                    <input type="text" class="input_search" id="site-search" name="site-search" placeholder="Busca GIFOS y más">
+    
+                    <i class="fas fa-times icons icon_close"></i>
+                    
+                </div>
+            
+                <div class="resultado" id="resultado">
 
-        </div>
-    </div>
-
-    <div class="sugerimos">
-        <h3>
-            Hoy te sugerimos:
-        </h3>
-    </div>
-
-    <section class="cuadros" id="hoy">
-
-    </section>
-    <div class="sugerimos">
-        <h3>
-            Tendencias:
-        </h3>
-    </div>
-    <section class="tendencias2" id="tendencias3">
-        <div class="gif-tendencias">
-            <img src="tendencies" alt="">
-            <div>
-                <h3>#hashtag</h3>
+                    <div class="sugerencia" onclick="cuadrosBusqueda(1)">
+                        
+                    </div>
+                    <div class="sugerencia" onclick="cuadrosBusqueda(2)">
+            
+                    </div>
+                    <div class="sugerencia" onclick="cuadrosBusqueda(3)">
+            
+                    </div>
+                </div>
+                
             </div>
-        </div>
-        <div class="gif-tendencias">
-            <div>
-                <h3>#hashtag</h3>
-            </div>
-        </div>
-        <div class="gif-tendencias">
-            <div>
-                <h3>#hashtag</h3>
-            </div>
-        </div>
-        <div class="gif-tendencias">
-            <div>
-                <h3>#hashtag</h3>
-            </div>
-        </div>
-        <div class="gif-tendencias">
-            <div>
-                <h3>#hashtag</h3>
-            </div>
-        </div>
-        <div class="gif-tendencias">
-            <div>
-                <h3>#hashtag</h3>
-            </div>
-        </div>
-        <div class="gif-tendencias">
-            <div>
-                <h3>#hashtag</h3>
-            </div>
-        </div>
+            <h3>Trending:</h3>
+            <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
 
-    </section>
+        </section>
 
+        <section class="trendings">
+            <h2>Trending GIFOS</h2>
+            <p>Mira los últimos 
+            GIFOS de nuestra comunidad.</p>
+
+            <div class="gif-tendencias">
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <h2>Compartir en:</h2>
+        <div class="social_media">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>        </div>
+        <p>© GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+    <div class="bar"></div>
+
+    <script src="scripts/funciones_pagina.js"></script>
+    <script src="scripts/gifs.js"></script>
     <script src="scripts/script.js"></script>
-
+    <script src="scripts/favorites.js"></script>
 </body>
-
 </html>

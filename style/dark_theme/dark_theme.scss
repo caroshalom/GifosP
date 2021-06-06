@@ -2,7 +2,9 @@ $dark_background: #37383c;
 $dark_trendings: #222326;
 $gray_secundary: #5e5e61;
 $green_secundary: #50E3C2;
+$logos_white: #CDD6E0;
 $text_normal: #fff;
+
 
 
 body{
@@ -11,7 +13,9 @@ body{
 .bar{
     background-color: black;
 }
-
+.burger_menu_btn{
+    color: white;
+}
 .menu_navegacion{
     background-color: black;
 
@@ -26,6 +30,10 @@ body{
     input{
         background-color: transparent;
         color: $text_normal;
+    }
+
+    i{
+        color: white;
     }
 
     .sugerencia{
@@ -54,12 +62,25 @@ body{
 
 .trendings{
     background-color: $dark_trendings;
-    width: 100%;
+    
     h2{
         color: $text_normal;
     }
     p{
         color: $text_normal;
+    }
+}
+
+footer{
+
+    .social_media{
+        color: $logos_white;
+        font-size: 1.8rem;
+
+        i:hover{
+            color: white;
+            cursor: pointer;
+        }
     }
 }
 
