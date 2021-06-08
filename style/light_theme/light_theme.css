@@ -2,6 +2,10 @@
   background-color: #572EE5;
 }
 
+header {
+  background-color: white;
+}
+
 .burger_menu_btn {
   color: #572EE5;
 }
@@ -38,6 +42,14 @@
   color: #572EE5;
 }
 
+.section_favs h2 {
+  color: #572EE5;
+}
+
+.section_favs .no_gifs {
+  color: #572EE5;
+}
+
 .trendings {
   background-color: #F3F5F8;
 }
@@ -60,7 +72,7 @@ footer .social_media i:hover {
   cursor: pointer;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   .menu_navegacion {
     background-color: transparent;
   }

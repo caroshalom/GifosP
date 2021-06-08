@@ -13,6 +13,9 @@ body{
 .bar{
     background-color: black;
 }
+header{
+    background-color: $dark_background;
+}
 .burger_menu_btn{
     color: white;
 }
@@ -60,6 +63,15 @@ body{
     }
 }
 
+.section_favs{
+    h2{
+        color: white;
+    }
+
+    .no_gifs{
+        color: white;
+    }
+}
 .trendings{
     background-color: $dark_trendings;
     
@@ -85,7 +97,7 @@ footer{
 }
 
 // DESKTOP
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
     .menu_navegacion{
         background-color: transparent;
         

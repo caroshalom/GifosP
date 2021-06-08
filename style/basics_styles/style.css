@@ -28,6 +28,9 @@ header {
   padding: 22px 22px 22px 22px;
   z-index: 1;
   height: 95px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 header .logo:hover {
@@ -39,11 +42,12 @@ header .burger_menu_btn {
 }
 
 header .menu_navegacion {
-  position: absolute;
+  position: fixed;
   top: -100vh;
   right: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 100;
   -webkit-transition: 200ms ease-in;
   transition: 200ms ease-in;
   display: -webkit-box;
@@ -225,6 +229,181 @@ main .search_section p {
   font-weight: 400;
 }
 
+.gif {
+  background-size: 100% 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 260px;
+  height: 200px;
+}
+
+.gif .gif_bg {
+  overflow: hidden;
+  height: 100%;
+}
+
+.gif .gif_hover {
+  background-color: #562ee5a3;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: none;
+  height: 100%;
+}
+
+.gif .gif_hover .buttons {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.gif .gif_hover .buttons .button {
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  border: none;
+  opacity: 0.8;
+}
+
+.gif .gif_hover .buttons .button i {
+  color: #562ee5;
+}
+
+.gif .gif_hover .buttons .button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.gif .gif_hover .buttons .un_fav {
+  opacity: 1;
+}
+
+.gif .gif_hover h2 {
+  font-size: 18px;
+  color: white;
+  font-weight: 400;
+}
+
+.gif .gif_hover P {
+  justify-self: flex-end;
+  color: white;
+  font-size: 15px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.gif .gif_hover .unfav .un_fav, .gif .gif_hover .unfav .delete {
+  display: none;
+}
+
+.gif .gif_hover .mygif .un_fav, .gif .gif_hover .mygif .fav {
+  display: none;
+}
+
+.gif .gif_hover .favorite .fav, .gif .gif_hover .favorite .delete {
+  display: none;
+}
+
+/* Large devices (laptops/desktops, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .gif {
+    width: 156px;
+    height: 120px;
+  }
+  .gif .gif_hover {
+    padding: 5px !important;
+  }
+  .gif .gif_hover .button {
+    -webkit-transform: scale(0.9) !important;
+            transform: scale(0.9) !important;
+  }
+  .gif .gif_hover h2 {
+    font-size: 10px;
+  }
+  .gif .gif_hover p {
+    font-size: 8px;
+  }
+}
+
+.full_screen_container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  padding: 15px;
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .full_screen_container img {
+    width: 95vw;
+  }
+}
+
+.section_favs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 46px;
+}
+
+.section_favs .grid_container {
+  margin-top: 46px;
+  width: 95vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px 0;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.section_favs .grid_container .no_gifs {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid_container {
+    width: 80vw !important;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4] !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+    grid-gap: 10px !important;
+    grid-auto-rows: minmax(100px, auto) !important;
+  }
+}
+
 main .trendings {
   padding: 46px 0;
   margin-top: 90px;
@@ -293,8 +472,8 @@ footer p {
   font-weight: 500;
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+/* Large devices (laptops/desktops, 768px and up) */
+@media only screen and (min-width: 768px) {
   header {
     height: unset;
     display: -webkit-box;
@@ -305,6 +484,7 @@ footer p {
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
     padding: 22px 156px;
+    position: static;
   }
   header .burger_menu_btn {
     display: none;

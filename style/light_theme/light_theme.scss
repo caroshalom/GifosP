@@ -8,6 +8,9 @@ $back_trending: #F3F5F8;
     background-color: $purple_primary;
 }
 
+header{
+    background-color: white;
+}
 .burger_menu_btn{
     color: $purple_primary;
 }
@@ -41,6 +44,16 @@ $back_trending: #F3F5F8;
     }
 }
 
+.section_favs{
+    h2{
+        color: $purple_primary;
+    }
+
+    .no_gifs{
+        color: $purple_primary;
+    }
+}
+
 .trendings{
     
     background-color: $back_trending;
@@ -66,7 +79,7 @@ footer{
 }
 
 // DESKTOP
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
     .menu_navegacion{
         background-color: transparent;
     

@@ -10,6 +10,9 @@ header{
     padding: 22px 22px 22px 22px;
     z-index: 1;
     height: 95px;
+    position: sticky;
+    top: 0;
+    
     .logo:hover{
         cursor: pointer;
         
@@ -18,11 +21,12 @@ header{
         font-size: 20px;
     }
     .menu_navegacion{
-        position: absolute;
+        position: fixed;
         top: -100vh;
         right: 0;
         width: 100vw;
         height: 100vh;
+        z-index: 100;
 
         transition: 200ms ease-in;
 

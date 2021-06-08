@@ -1,0 +1,26 @@
+.full_screen_container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    padding: 15px;
+
+
+    display: none;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+@media only screen and (max-width: 768px) {
+    .full_screen_container{
+        img{
+            width: 95vw;
+        }
+    }
+}

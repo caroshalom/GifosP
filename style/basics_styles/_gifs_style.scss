@@ -1,0 +1,112 @@
+.gif{
+    background-size: 100% 100%;
+    align-self: center;
+    justify-self: center;
+    width: 260px;
+    height: 200px;
+    .gif_bg{
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .gif_hover{
+        background-color: #562ee5a3;
+        padding: 15px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        display: none;
+        height: 100%;
+
+        .buttons{
+            
+            align-self: flex-end;
+
+
+            
+            .button{
+                height: 25px;
+                width: 25px;
+                border-radius: 5px;
+                border: none;
+                opacity: 0.8;
+    
+                
+                i{
+                    color: #562ee5;
+                }
+    
+                &:hover{
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+            .un_fav{
+                opacity: 1;
+            }
+        }
+        
+        h2{
+            font-size: 18px;
+            color: white;
+            font-weight: 400;
+        }
+        
+        P{
+            justify-self: flex-end;
+            color: white;
+            font-size: 15px;
+            align-self: flex-end;
+        }
+        // TIPOS DE GIFS (CAMBIAN LOS BOTONES DEL GIFO)
+        .unfav{
+            .un_fav, .delete{
+                display: none;
+                
+            }
+        }
+    
+        .mygif{
+            
+            .un_fav, .fav{
+                display: none;
+            }
+        }
+    
+        .favorite{
+            
+            .fav, .delete{
+                display: none;
+            }
+        }
+
+        // TERMINA LOS CAMBIOS SEGUN TIPO DE GIF
+    }
+    
+}
+
+// GIFS VERSION MOBILE
+/* Large devices (laptops/desktops, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .gif{
+        width: 156px;
+        height: 120px;
+
+        .gif_hover{
+            
+            padding: 5px !important;
+            .button{
+                
+                transform: scale(0.9) !important;
+            }
+            h2{
+                font-size: 10px;
+            }
+            p{
+                font-size: 8px;
+            }
+        }
+
+
+    }
+}

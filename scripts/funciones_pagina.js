@@ -60,7 +60,7 @@ function changeAssests(theme){
         
         // ASSESTS LIGHT
         document.querySelector(".logo").setAttribute("src","assets/logo-mobile.svg")
-        if (window.screen.width >= 992) {
+        if (window.screen.width >= 768) {
             document.querySelector(".logo").setAttribute("src","assets/logo-desktop.svg")
         }
 
@@ -76,7 +76,7 @@ function changeAssests(theme){
     }else if(theme === "dark"){
         // ASSESTS DARK
         document.querySelector(".logo").setAttribute("src","assets/logo-mobile-modo-noct.svg")
-        if (window.screen.width >= 992) {
+        if (window.screen.width >= 768) {
             document.querySelector(".logo").setAttribute("src","assets/logo-modo-noc.svg")
         }
 
