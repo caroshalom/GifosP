@@ -53,8 +53,8 @@ button_favorites.addEventListener("click", async () => {
 
     `
 
-    favsss = ["l4Ep45WurPN7vxa4o","3o72EX0nHKFwKH9bvG","3ogwG9UL3PzVTO62Ws","IfmbLrMdACoAoO5BbT","l2SpPRt9SApxLgVmU","H6cr0sw4oCRn9bJziC"]
-    localStorage.setItem("favorites", JSON.stringify(favsss))
+    // favsss = ["l4Ep45WurPN7vxa4o","3o72EX0nHKFwKH9bvG","3ogwG9UL3PzVTO62Ws","IfmbLrMdACoAoO5BbT","l2SpPRt9SApxLgVmU","H6cr0sw4oCRn9bJziC"]
+    // localStorage.setItem("favorites", JSON.stringify(favsss))
     
     let gifContent = await renderFavs()
 
