@@ -62,25 +62,7 @@ button_favorites.addEventListener("click", async () => {
     document.querySelector(".grid_container").innerHTML += gifContent
     
     gifButtonsFunctions()
-
-    let gifs = document.querySelectorAll(".gif")
-    gifs.forEach(element => {
-        
-
-        element.addEventListener("mouseenter", () => {
-            
-            const hover = element.firstElementChild 
-            hover.style.display = "flex"
-
-        })
-
-        element.addEventListener("mouseleave", () => {
-            
-            const hover = element.firstElementChild 
-            hover.style.display = "none"
-        })
-        
-    });
+    gifHover() 
 })
 
 window.onload = () => {

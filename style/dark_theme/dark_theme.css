@@ -75,6 +75,30 @@ header {
   color: #fff;
 }
 
+.full_screen_container {
+  background-color: #37383c;
+}
+
+.full_screen_container .fa-times {
+  color: white;
+}
+
+.full_screen_container h2, .full_screen_container p {
+  color: white;
+}
+
+.slider {
+  background-color: transparent;
+  border: 1px solid white !important;
+  color: white !important;
+}
+
+.slider:hover {
+  cursor: pointer;
+  background-color: white !important;
+  color: black !important;
+}
+
 footer .social_media {
   color: #CDD6E0;
   font-size: 1.8rem;

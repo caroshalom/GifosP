@@ -4,6 +4,7 @@
     justify-self: center;
     width: 260px;
     height: 200px;
+
     .gif_bg{
         overflow: hidden;
         height: 100%;
@@ -13,7 +14,7 @@
         background-color: #562ee5a3;
         padding: 15px;
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: column;
         justify-content: space-between;
         display: none;
         height: 100%;
@@ -80,15 +81,20 @@
             }
         }
 
+
         // TERMINA LOS CAMBIOS SEGUN TIPO DE GIF
     }
     
 }
 
+// .trending{
+//     width: 290px;
+//     height: 230px;   
+// }
+
 // GIFS VERSION MOBILE
-/* Large devices (laptops/desktops, 768px and up) */
 @media only screen and (max-width: 768px) {
-    .gif{
+    .gif, .trending{
         width: 156px;
         height: 120px;
 
@@ -109,4 +115,5 @@
 
 
     }
+
 }

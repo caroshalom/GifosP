@@ -92,6 +92,23 @@
         }
     }
 
+    // CAROUSEL DESKTOP
+    .trendings_container{
+
+        width: 90vw;
+        .carousel-gif-tendencias{
+            width: 70%;
+            .gif{
+                margin: 10px;
+                min-width: 260px;
+                height: 220px;
+            }
+        }
+        .slider{
+            display: block;
+        }
+    }
+
     // FOOTER STYLES FOR DESKTOP
     footer{
         flex-flow: row wrap;

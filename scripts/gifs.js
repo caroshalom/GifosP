@@ -7,6 +7,7 @@ class Gif{
         // unfav: INDICA LOS GIFS QUE TIENEN BOTON AÑADIR A FAVORITOS
         // mygif: INDICA LOS GIFS QUE TIENEN BOTON ELIMINAR
         // favorite: INDICA LOS GIFS QUE TIENEN BOTON QUITAR FAVORITO
+        // trending: INDICA LOS GIFS DEL CAROUSEL DE TRENDING
         this.apyKey = "aiSyvuotTBkiW8LiDS2grIV7FM6KZv9T"
         this.type = type
         this.id = id
@@ -23,11 +24,11 @@ class Gif{
             console.log(data)
             let gif = `
              
-            <div class="gif" id="${this.id}" style="background-image: url('${data.data.images.original.url}');">
+            <div class="gif ${this.type === "trending" ? "trending" : ""}" id="${this.id}" style="background-image: url('${data.data.images.original.url}');">
 
                 <div class="gif_hover ">
 
-                    <div class="buttons ${this.type}">
+                    <div class="buttons ${this.type} ${localStorage.getItem("favorites").includes(this.id) ? "favorite" : "unfav"} ">
                  
                         <button class="button fav"><i class="far fa-heart"></i></button> 
                         <button class="button un_fav"><i class="fas fa-heart"></i></button> 
@@ -62,6 +63,7 @@ class Gif{
 // BOTONES DE GIFS
 // EJECUTAR DESPUES DE RENDERIZAR GIFS
 const gifButtonsFunctions = () => {
+
 
     // ADD FAVORITE BUTTON
     
@@ -141,36 +143,75 @@ const gifButtonsFunctions = () => {
         
         element.addEventListener("click", () => {
 
-
+            
             let id = element.parentElement.parentElement.parentElement.id
-             
+            const hover = element.parentElement.parentElement
+
+            container.innerHTML = ""
+            container.id = id
             container.innerHTML = `
             
+            <i class="fas fa-times"></i>
             <img src="https://media0.giphy.com/media/${id}/giphy.gif" alt="GIF">
-
+            <div class="controllers ${localStorage.getItem("favorites").includes(id) ? "favorite" : "unfav"}">
+            ${hover.innerHTML}
+            </div>
             `
+
+
 
 
             // MANIPULA EL TAMAÑO DEL GIF EN FULL SCREEN
             const fsGif = document.querySelector(".full_screen_container img")
-            if (window.screen.width >= 768 && fsGif.width > fsGif.height) {
+            const fsControllers = document.querySelector(".full_screen_container .controllers")
+            const fsClose = document.querySelector(".full_screen_container .fa-times")
+            if (window.screen.width >= 768) {
                 
-                fsGif.style.width = "60vw"
+                fsGif.style.width = "50vw"
 
-            }else if(window.screen.width >= 768){
+            }else{
 
-                fsGif.style.height = "70vh"
+                fsGif.style.width = "90vw"
+
             }
 
 
             container.style.display = "flex"
 
+            setTimeout(() => {
+                fsClose.addEventListener("click", () => container.style.display = "none")
+                gifButtonsFunctions()
+            }, 1000) 
         })
 
     });
-
-    container.addEventListener("click", () => container.style.display = "none")
+    
+    
+    
 }
 
 
+// GIF HOVER 
+// EJECUTAR ESPUES DE RENDERIZAR GIFS
+const gifHover = () => {
+
+    let gifs = document.querySelectorAll(".gif")
+        gifs.forEach(element => {
+            
+    
+            element.addEventListener("mouseenter", () => {
+                
+                const hover = element.firstElementChild 
+                hover.style.display = "flex"
+    
+            })
+    
+            element.addEventListener("mouseleave", () => {
+                
+                const hover = element.firstElementChild 
+                hover.style.display = "none"
+            })
+            
+        });
+}
   

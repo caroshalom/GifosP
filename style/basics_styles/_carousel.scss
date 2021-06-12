@@ -1,0 +1,65 @@
+.trendings_container{
+
+    margin-top: 20px;
+    width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    .carousel-gif-tendencias{
+        scroll-behavior: smooth;
+        width: 90%;
+        display: flex;
+        overflow-y: hidden; 
+        overflow-x: scroll;
+        height: 230px;
+        
+        // SCROLL HIDDEN
+        &::-webkit-scrollbar {
+            display: none;
+            
+        }
+        .gif{
+            margin: 10px;
+            min-width: 176px;
+            height: 140px;
+            
+            
+            .gif_hover{
+                
+                
+                .info{
+                    
+                    
+                    p, h2{
+                        font-size: 1.03rem;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+
+    
+    
+    
+    .slider{
+        
+        display: none;
+        width: 40px;
+        height: 40px;
+        
+        background-color: transparent;
+        border: 1px solid #572EE5;  
+        color: #572EE5;
+
+        &:hover{
+
+            cursor: pointer;
+            background-color: #572EE5;
+            color: white;
+        }
+    }
+}
+
+

@@ -62,6 +62,10 @@ header {
   color: black;
 }
 
+.full_screen_container .fa-times {
+  color: #572EE5;
+}
+
 footer .social_media {
   color: #9CAFC3;
   font-size: 1.8rem;

@@ -83,6 +83,34 @@ header{
     }
 }
 
+
+// FULL SCREEN
+.full_screen_container{
+    background-color: $dark_background;
+
+    .fa-times{
+        color: white;
+    }
+
+    
+    h2, p{
+        color: white;
+    }
+}
+.slider{
+    
+    background-color: transparent;
+    border: 1px solid white !important;  
+    color: white !important;
+
+    &:hover {
+
+        cursor: pointer;
+        background-color: white !important;
+        color: black !important;
+    }
+}
+
 footer{
 
     .social_media{
