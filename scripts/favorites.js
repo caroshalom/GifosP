@@ -67,4 +67,7 @@ button_favorites.addEventListener("click", async () => {
 
 window.onload = () => {
     setTheme()
+    if(!localStorage.getItem("favorites")){
+        localStorage.setItem("favorites", "[]")
+    }
 }

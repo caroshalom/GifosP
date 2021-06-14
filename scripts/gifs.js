@@ -89,6 +89,9 @@ const gifButtonsFunctions = () => {
                 favList.unshift(id)
                 localStorage.setItem("favorites", JSON.stringify(favList))
             }
+
+            window.location.reload(true)
+
         })
     })
 
@@ -146,14 +149,21 @@ const gifButtonsFunctions = () => {
             
             let id = element.parentElement.parentElement.parentElement.id
             const hover = element.parentElement.parentElement
+            let isFav = ""
 
+            if (!localStorage.getItem("favorites")) {
+                isFav = localStorage.getItem("favorites").includes(id) ? "favorite" : "unfav"
+            }else{
+                isFav = "unfav"
+            }
+            
             container.innerHTML = ""
             container.id = id
             container.innerHTML = `
             
             <i class="fas fa-times"></i>
             <img src="https://media0.giphy.com/media/${id}/giphy.gif" alt="GIF">
-            <div class="controllers ${localStorage.getItem("favorites").includes(id) ? "favorite" : "unfav"}">
+            <div class="controllers ${isFav}">
             ${hover.innerHTML}
             </div>
             `
