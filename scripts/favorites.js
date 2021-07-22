@@ -8,7 +8,8 @@ const renderFavs = async () => {
         
     
 
-        // CREAR UN GIF POR CADA FAVORITO GUARDADO
+        // CREAR UN GIF POR CADA FAVORITO GUARDAD
+
         for (const id of favList) {
             
 
@@ -53,13 +54,12 @@ button_favorites.addEventListener("click", async () => {
 
     `
 
-    // favsss = ["3o72EX0nHKFwKH9bvG","3ogwG9UL3PzVTO62Ws","IfmbLrMdACoAoO5BbT","l2SpPRt9SApxLgVmU","H6cr0sw4oCRn9bJziC"]
-    // localStorage.setItem("favorites", JSON.stringify(favsss))
-    
+    document.querySelector(".grid_container").innerHTML = ""
     let gifContent = await renderFavs()
 
     section_main.className = "main_section section_favs"
-    document.querySelector(".grid_container").innerHTML += gifContent
+    
+    document.querySelector(".grid_container").innerHTML = gifContent
     
     gifButtonsFunctions()
     gifHover() 

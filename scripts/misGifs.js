@@ -14,7 +14,7 @@ const renderMisGIfs = async () => {
 
             let miGif = new Gif("mygif", id)
             const misGifTemp = await miGif.renderGif()
-    
+     
             content += misGifTemp
         }
 

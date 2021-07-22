@@ -55,11 +55,11 @@ header {
   color: #fff;
 }
 
-.section_favs h2 {
+.section_favs h2, .section_mis_gifs h2 {
   color: white;
 }
 
-.section_favs .no_gifs {
+.section_favs .no_gifs, .section_mis_gifs .no_gifs {
   color: white;
 }
 

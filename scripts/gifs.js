@@ -21,7 +21,6 @@ class Gif{
             let data = await response.json()
             
 
-            console.log(data)
             let gif = `
              
             <div class="gif ${this.type === "trending" ? "trending" : ""}" id="${this.id}" style="background-image: url('${data.data.images.original.url}');">
@@ -70,21 +69,26 @@ const gifButtonsFunctions = () => {
     const add_favorite_btns = document.querySelectorAll(".fav")
     add_favorite_btns.forEach(element => {
 
-        element.addEventListener("click", () => {
-            
-            if(localStorage.getItem("favorites")){
+        
+        
 
+        element.addEventListener("click", async () => {
+
+            let id = element.parentElement.parentElement.parentElement.id
+            element.disabled = false
+            console.log("click_buton")
+            if(localStorage.getItem("favorites")){
                 
-                let id = element.parentElement.parentElement.parentElement.id
-                let favList = JSON.parse(localStorage.getItem("favorites"))
-                favList.unshift(id)
-                localStorage.setItem("favorites", JSON.stringify(favList))
+                let favList = await JSON.parse(localStorage.getItem("favorites"))
+                if (!favList.includes(id)) {
+                    
+                    favList.unshift(id)
+                    localStorage.setItem("favorites", JSON.stringify(favList))
+                }
                 
             }else{
                 
                 localStorage.setItem("favorites","[]")
-
-                let id = element.parentElement.parentElement.parentElement.id
                 let favList = JSON.parse(localStorage.getItem("favorites"))
                 favList.unshift(id)
                 localStorage.setItem("favorites", JSON.stringify(favList))
@@ -195,6 +199,24 @@ const gifButtonsFunctions = () => {
         })
 
     });
+
+    // DELETE MYGIFO
+
+    const delete_mygif_btns = document.querySelectorAll(".delete")
+    delete_mygif_btns.forEach(element => {
+        
+        element.addEventListener("click", () => {
+
+            
+            let id = element.parentElement.parentElement.parentElement.id
+            let mygifsList = JSON.parse(localStorage.getItem("misGifos"))
+            let newmygifsList = mygifsList.filter( element => element !== id)
+            localStorage.setItem("misGifos", JSON.stringify(newmygifsList))
+            window.location.reload(true)
+        })
+    });
+
+
     
     
     
