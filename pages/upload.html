@@ -18,30 +18,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="./style/basics_styles/style.css">
-    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/basics_styles/style.css">
+    <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
 
     <!-- THEMES -->
-    <link rel="stylesheet" href="./style/light_theme/light_theme.css" class="themeSheet">
+    <link rel="stylesheet" href="../style/light_theme/light_theme.css" class="themeSheet">
 
     <title>Crea un Gifo</title>
 
 </head>
 
-<body>
+<body style="height: 100vh;">
+    
+    <div class="bar"></div>
     <header class="">
-        <div class="top-bar">
-            <h3 class="top-bar-text">
-                ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
-            </h3>
-        </div>
-        <a href="/index.html">
-            <img src="goback" alt="go back" class="back">
-        </a>
-        <div class="logo" style="position: absolute;">
-            <img src="logo" alt="logo">
-        </div>
+        
+        <img src="../assets/logo-mobile.svg" alt="GIFOS_LOGO" class="logo">
+        <i class="fas fa-bars burger_menu_btn"></i>
+        <nav class="menu_navegacion">
+            <ul>
+                <li id="changeTheme">Modo Nocturno <span></span></li>
+                <li class="option favs">Favoritos <span></span></li>
+                <li class="option my_gifs">Mis GiFOS <span></span></li>
+                <img src="../assets/CTA-crear-gifo-active.svg" alt="" class="create_btn">
+            </ul>
+
+        </nav>
     </header>
+
     <div class="busqueda sugerencias crear-cuadroGrande">
         <div>
             <h4>
@@ -77,9 +81,22 @@
     </div>
     <div class="busqueda sugerencias crear-cuadroGrande" id="subir">
     </div>
-    <!-- scripts-->}
+
+    <footer>
+        <h2>Compartir en:</h2>
+        <div class="social_media">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>       
+        </div>
+        <p>© GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+    <div class="bar"></div>
+
+    <!-- scripts-->
     <script src="../scripts/RecordRTC.js"></script>
     <script src="../scripts/subir.js"></script>
+    <script src="../scripts/"></script>
 </body>
 
 </html>

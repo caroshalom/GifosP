@@ -133,7 +133,12 @@ close_icon.addEventListener("click", () =>{
 const logo = document.querySelector(".logo")
 logo.addEventListener("click", () => window.location.href = "../index.html")
 
+// CREATE GIFOS BUTTON
+const button_create_gifo = document.querySelector(".create_btn")
+button_create_gifo.addEventListener("click", () => {
 
+    location.href = "./pages/upload.html"
+})
 
 
 
