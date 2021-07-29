@@ -452,7 +452,7 @@ main .search_section p {
   }
 }
 
-.section_favs, .section_mis_gifs {
+.section_favs, .section_mis_gifs, .search_section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -466,7 +466,7 @@ main .search_section p {
   margin-top: 46px;
 }
 
-.section_favs .grid_container, .section_mis_gifs .grid_container {
+.section_favs .grid_container, .section_mis_gifs .grid_container, .search_section .grid_container {
   margin-top: 46px;
   width: 95vw;
   display: -ms-grid;
@@ -477,7 +477,7 @@ main .search_section p {
   grid-auto-rows: minmax(100px, auto);
 }
 
-.section_favs .grid_container .no_gifs, .section_mis_gifs .grid_container .no_gifs {
+.section_favs .grid_container .no_gifs, .section_mis_gifs .grid_container .no_gifs, .search_section .grid_container .no_gifs {
   text-align: center;
 }
 

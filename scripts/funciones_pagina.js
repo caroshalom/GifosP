@@ -146,7 +146,6 @@ button_create_gifo.addEventListener("click", () => {
 window.onload = () => {
 
     setTheme()
-    
 
 }
 
