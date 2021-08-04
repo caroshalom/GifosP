@@ -43,6 +43,8 @@ const button_favorites = document.querySelector(".favs")
 
 button_favorites.addEventListener("click", async () => {
 
+
+    document.querySelector(".search_result").style.display = "none"
     section_main.innerHTML = `
     <img src="../assets/icon-favoritos.svg">
     <h2>Favoritos</h2>

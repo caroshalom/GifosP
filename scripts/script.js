@@ -27,9 +27,11 @@ document.getElementById('site-search').addEventListener('input', async function 
 
 let api_key = 'api_key=aiSyvuotTBkiW8LiDS2grIV7FM6KZv9T';
 async function searchGif(termino, limit) {
+
     let urlbusqueda = [];
     return new Promise(async (resolve, reject) => {
         try {
+            
             let busqueda = await fetch(`https://api.giphy.com/v1/gifs/search?${api_key}&q=${termino}&limit=${limit}&lang=es&rating=pg`)
             let jsonb = await busqueda.json();
             for (let i = 0; i < limit; i++) {
@@ -51,6 +53,10 @@ async function searchGif(termino, limit) {
                 grid_container.innerHTML = content
                 gifButtonsFunctions()
                 gifHover() 
+
+                document.querySelector(".search_result").style.display = "flex"
+                
+                document.querySelector(".search_title").innerText = termino
             
             })
 

@@ -39,6 +39,8 @@ const button_mis_gifs = document.querySelector(".my_gifs")
 
 button_mis_gifs.addEventListener("click", async () => {
 
+    document.querySelector(".search_result").style.display = "none"
+
     section_main.innerHTML = `
     <img src="../assets/icon-mis-gifos.svg">
     <h2>Mis GIFOS</h2>

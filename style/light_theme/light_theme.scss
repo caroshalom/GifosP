@@ -22,6 +22,9 @@ header{
     }
 }
 
+
+
+
 .search_section{
     h2{
         color: $purple_primary;
@@ -73,6 +76,31 @@ header{
     }
 
 }
+
+
+// UPLOAD
+.main_upload{
+
+    #comenzar, .capturar, #stop, #subir2{
+
+        color: $purple_primary;
+        border: 1px solid $purple_primary;
+
+        &:hover{
+
+            background-color: $purple_primary;
+            color: white;
+            cursor: pointer;
+        }
+
+    }
+
+    .timer{
+
+        color: $purple_primary;
+        font-weight: 500;
+    }
+}
 footer{
 
     .social_media{
@@ -98,5 +126,11 @@ footer{
                 color: $green_secundary;
             }
         }
+    }
+
+    .search_result{
+        color: $purple_primary;
+        border-top: 2px solid rgba(182, 182, 182, 0.541);
+        margin-top: 40px;
     }
 }

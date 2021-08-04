@@ -28,8 +28,13 @@ header{
     }
 }
 
+
+
+
+
 .search_section{
 
+    
     input{
         background-color: transparent;
         color: $text_normal;
@@ -39,8 +44,8 @@ header{
         color: white;
     }
 
-    .sugerencia{
-        color: $text_normal;
+    .sugerencia, .search_result{
+        color: white;
     }
 
     .busqueda{
@@ -113,6 +118,7 @@ header{
 
 footer{
 
+    color: white;
     .social_media{
         color: $logos_white;
         font-size: 1.8rem;
@@ -140,5 +146,10 @@ footer{
                 color: $green_secundary;
             }
         }
+    }
+    .search_result{
+        color: $text_normal;
+        border-top: 2px solid $gray_secundary;
+        margin-top: 40px;
     }
 }

@@ -31,8 +31,8 @@ header {
   color: white;
 }
 
-.search_section .sugerencia {
-  color: #fff;
+.search_section .sugerencia, .search_section .search_result {
+  color: white;
 }
 
 .search_section .busqueda {
@@ -99,6 +99,10 @@ header {
   color: black !important;
 }
 
+footer {
+  color: white;
+}
+
 footer .social_media {
   color: #CDD6E0;
   font-size: 1.8rem;
@@ -123,6 +127,11 @@ footer .social_media i:hover {
   }
   .menu_navegacion li:hover {
     color: #50E3C2;
+  }
+  .search_result {
+    color: #fff;
+    border-top: 2px solid #5e5e61;
+    margin-top: 40px;
   }
 }
 /*# sourceMappingURL=dark_theme.css.map */

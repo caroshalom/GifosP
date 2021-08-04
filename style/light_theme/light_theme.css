@@ -66,6 +66,22 @@ header {
   color: #572EE5;
 }
 
+.main_upload #comenzar, .main_upload .capturar, .main_upload #stop, .main_upload #subir2 {
+  color: #572EE5;
+  border: 1px solid #572EE5;
+}
+
+.main_upload #comenzar:hover, .main_upload .capturar:hover, .main_upload #stop:hover, .main_upload #subir2:hover {
+  background-color: #572EE5;
+  color: white;
+  cursor: pointer;
+}
+
+.main_upload .timer {
+  color: #572EE5;
+  font-weight: 500;
+}
+
 footer .social_media {
   color: #9CAFC3;
   font-size: 1.8rem;
@@ -86,6 +102,11 @@ footer .social_media i:hover {
   }
   .menu_navegacion li:hover {
     color: #50E3C2;
+  }
+  .search_result {
+    color: #572EE5;
+    border-top: 2px solid rgba(182, 182, 182, 0.541);
+    margin-top: 40px;
   }
 }
 /*# sourceMappingURL=light_theme.css.map */

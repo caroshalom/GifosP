@@ -37,7 +37,7 @@ header {
   height: 95px;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 5px;
 }
 
 header .logo:hover {
@@ -123,6 +123,19 @@ main {
           align-items: center;
 }
 
+main .search_result {
+  display: none;
+}
+
+main .search_result .search_title {
+  text-align: center;
+  margin: 60px;
+}
+
+main .search_result h3 {
+  margin: 50px 0 0 0;
+}
+
 main .search_section {
   margin-top: 10px;
   display: -webkit-box;
@@ -204,7 +217,7 @@ main .search_section .busqueda .search .icon_close {
 main .search_section .busqueda .search .input_search {
   height: 22px;
   border: none;
-  width: 100%;
+  width: 65vw;
   margin: 0 10px;
   padding-left: 10px;
 }
@@ -452,7 +465,7 @@ main .search_section p {
   }
 }
 
-.section_favs, .section_mis_gifs, .search_section {
+.section_favs, .section_mis_gifs, .search_result {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -466,7 +479,7 @@ main .search_section p {
   margin-top: 46px;
 }
 
-.section_favs .grid_container, .section_mis_gifs .grid_container, .search_section .grid_container {
+.section_favs .grid_container, .section_mis_gifs .grid_container, .search_result .grid_container {
   margin-top: 46px;
   width: 95vw;
   display: -ms-grid;
@@ -477,7 +490,7 @@ main .search_section p {
   grid-auto-rows: minmax(100px, auto);
 }
 
-.section_favs .grid_container .no_gifs, .section_mis_gifs .grid_container .no_gifs, .search_section .grid_container .no_gifs {
+.section_favs .grid_container .no_gifs, .section_mis_gifs .grid_container .no_gifs, .search_result .grid_container .no_gifs {
   text-align: center;
 }
 
@@ -578,6 +591,100 @@ main .trendings p {
   color: white;
 }
 
+.main_upload #comenzar, .main_upload .capturar, .main_upload #stop, .main_upload #subir2 {
+  width: 8vw;
+  padding: 12px;
+  border-radius: 25px;
+}
+
+.main_upload .section_a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_upload .section_a #subir {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid;
+  width: 50vw;
+  height: 50vh;
+  margin: 10px 30px;
+  padding: 35px 108px;
+}
+
+.main_upload .section_a #subir video {
+  width: 480px;
+  height: 320px;
+}
+
+.main_upload .section_a .pelicula_logo {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.main_upload .section_a .camara_logo {
+  padding-right: 50px;
+  height: 150px;
+}
+
+.main_upload .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_upload .buttons .paginator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 12vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 24px 0;
+}
+
+.main_upload .buttons .paginator p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.main_upload .buttons .divisor {
+  border: 3px solid;
+  width: 55vw;
+  border-radius: 5px;
+  margin: 0 0 24px 0;
+}
+
 footer {
   margin-top: 82px;
   display: -webkit-box;
@@ -617,6 +724,100 @@ footer p {
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
+}
+
+.main_upload #comenzar, .main_upload .capturar, .main_upload #stop, .main_upload #subir2 {
+  width: 8vw;
+  padding: 12px;
+  border-radius: 25px;
+}
+
+.main_upload .section_a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_upload .section_a #subir {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid;
+  width: 50vw;
+  height: 50vh;
+  margin: 10px 30px;
+  padding: 35px 108px;
+}
+
+.main_upload .section_a #subir video {
+  width: 480px;
+  height: 320px;
+}
+
+.main_upload .section_a .pelicula_logo {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.main_upload .section_a .camara_logo {
+  padding-right: 50px;
+  height: 150px;
+}
+
+.main_upload .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_upload .buttons .paginator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 12vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 24px 0;
+}
+
+.main_upload .buttons .paginator p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.main_upload .buttons .divisor {
+  border: 3px solid;
+  width: 55vw;
+  border-radius: 5px;
+  margin: 0 0 24px 0;
 }
 
 /* Large devices (laptops/desktops, 768px and up) */
@@ -701,6 +902,9 @@ footer p {
   }
   main .search_section p {
     font-size: 16px;
+  }
+  main .input_search {
+    width: 28vw !important;
   }
   main .trendings {
     margin-top: 162px;

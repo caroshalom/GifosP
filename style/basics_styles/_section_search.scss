@@ -2,7 +2,20 @@ main{
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    
+    .search_result{
 
+        display: none;
+        .search_title{
+            text-align: center;
+            margin: 60px;
+        }
+
+        h3{
+            margin: 50px 0 0 0 ;
+        }
+    }
+    
     .search_section{
         margin-top: 10px;
         display: flex;
@@ -60,7 +73,7 @@ main{
                 .input_search{
                     height: 22px;
                     border: none;
-                    width: 100%;
+                    width: 65vw;
                     margin: 0 10px;
                     padding-left: 10px;
                 }

@@ -1,0 +1,78 @@
+.main_upload{
+
+    #comenzar, .capturar, #stop, #subir2{
+
+        width: 8vw;
+        padding: 12px;
+        border-radius: 25px;
+    }
+
+    .section_a{
+        display: flex;
+        align-items: center;
+
+        #subir{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid;
+            width: 50vw;
+            height: 50vh;
+            margin: 10px 30px;
+            padding: 35px 108px;
+
+            video{
+
+                width: 480px;
+                height: 320px;
+            }
+        }
+
+        .pelicula_logo{
+            align-self: flex-end;
+        }
+
+        .camara_logo{
+            padding-right: 50px;
+            
+
+            height: 150px;
+
+            
+        }
+    }
+
+
+    
+    .buttons{
+
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+
+        .paginator{
+
+            display: flex;
+            width: 12vw;
+            justify-content: space-between;
+            margin: 24px 0;
+
+            p{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid;
+            }
+        }   
+        .divisor{
+            border: 3px solid;
+            width: 55vw;
+            border-radius: 5px;
+            margin: 0 0 24px 0;
+        }
+    }
+}

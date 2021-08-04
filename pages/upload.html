@@ -46,41 +46,39 @@
         </nav>
     </header>
 
-    <div class="busqueda sugerencias crear-cuadroGrande">
-        <div>
-            <h4>
-                Crear Guifos
-            </h4>
-            <!-- <img src="/assets/button3.svg" alt="cerrar"> -->
-        </div>
-        <h2>
-            Aquí podrás crear tus propios guifos
-        </h2>
-        <img src="assets/windowimg.png" alt="guifo sugerencia" class="window">
-        <p>
-            Crear tu <b>guifo</b> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los
-            pasos
-            para crear tu guifo son: <br><br>
-            <b>1)</b> Dar permisos de acceso a la cámara (sólo por el tiempo de uso) <br>
-            <b>2)</b> Capturar tu momento guifo
-            <br>
 
-            <b>3)</b> Revisar el momento <br>
-            <b>4)</b> Listo para subir y compartir! <br>
-            ¿Quieres comenzar a crear tu <b>guifo</b> ahora? <br>
-        </p>
-        <button onclick="location.href='/index.html'" id="comenzar2">
-            <img src="cancel" alt="">
+    <main class="main_upload">
 
-            Cancelar
-        </button>
+        <section class="section_a">
+            <img src="../assets/camara.svg" alt="camara_logo" class="camara_logo">
+            <div class="busqueda sugerencias crear-cuadroGrande" id="subir">
+            </div>
+    
+            
+            <img src="../assets/pelicula.svg" alt="pelicula_logo" class="pelicula_logo">
 
-        <button onclick="subirHtml(); streamVideo();" id="comenzar">
-            Comenzar
-        </button>
-    </div>
-    <div class="busqueda sugerencias crear-cuadroGrande" id="subir">
-    </div>
+        </section>
+
+        <section class="buttons">
+
+            <div class="paginator">
+                <p class="selected">1</p>
+                <p class="unselected">2</p>
+                <p class="unselected">3</p>
+            </div>
+
+
+            <div class="divisor"></div>
+            <button onclick="subirHtml(); streamVideo();" id="comenzar">
+                COMENZAR
+            </button>
+
+        </section>
+ 
+        
+        
+    </main>
+
 
     <footer>
         <h2>Compartir en:</h2>
@@ -94,9 +92,10 @@
     <div class="bar"></div>
 
     <!-- scripts-->
+
+    <script src="../scripts/funciones_upload_page.js"></script>
     <script src="../scripts/RecordRTC.js"></script>
     <script src="../scripts/subir.js"></script>
-    <script src="../scripts/"></script>
 </body>
 
 </html>

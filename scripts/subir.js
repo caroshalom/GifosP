@@ -2,12 +2,7 @@ function subirHtml() {
     let cuadroGrande = document.querySelector('div.crear-cuadroGrande')
     cuadroGrande.style.display = 'none'
     let chequeo = ''
-    chequeo += `    <div>
-        <h4>
-            Crear Guifos
-        </h4>
-        <img src="/assets/button3.svg" alt="x">
-    </div>
+    chequeo += `
    
     <video autoplay playsinline></video>
    
@@ -16,18 +11,17 @@ function subirHtml() {
     <button  id="camarita">
     </button>
     
-    <button onload="streamVideo()" onclick="grabar2()" id="grabar" >
-    <h2 class="capturar">Capturar</h2>
+    <button onload="streamVideo()" onclick="grabar2()" id="grabar" class="capturar">
+    GRABAR
     </button>
     </div>
     <div>
-
     </div>
     `
     console.log(chequeo);
     document.getElementById('subir').innerHTML = chequeo;
     document.getElementById('subir').style.display = 'block';
-    document.querySelector('#subir div h4').innerHTML = "Un Chequeo Antes de Empezar"
+
 
 }
 // ----------------------------------
@@ -164,17 +158,17 @@ function grabar2() {
     let camaritaStop = document.createElement('button');
     let stop = document.createElement('button');
     document.getElementById('grabar').remove();
-    document.querySelector('#subir div h4').innerHTML = "Capturando Tu Guifo";
 
     camaritaStop.id = 'camarita-stop';
     stop.id = 'stop';
     camarita.after(camaritaStop);
     camaritaStop.after(stop);
     document.getElementById("camarita").remove();
-    document.querySelector('.crear-cuadroGrande div button:nth-child(2)').innerHTML = 'Listo';
+    document.querySelector('.crear-cuadroGrande div button:nth-child(2)').innerHTML = 'Finalizar';
     stop.addEventListener("click", function () {
         return recorder.stopRecording(stopRecordingCallback)
     });
+
     captureCamera(function (camera) {
         var video = document.querySelector('video');
         video.srcObject = camera;
@@ -192,7 +186,7 @@ function grabar2() {
 
         recorder.startRecording();
         dateStarted = new Date().getTime();
-        let capt = document.querySelector('.busqueda div:nth-child(4)');
+        let capt = document.querySelector('.busqueda div:nth-child(3)');
         capt.classList.add('timer');
         (function looper() {
             if (document.querySelector('video') == null) {
@@ -204,6 +198,7 @@ function grabar2() {
 
     });
 }
+
 function reproductor() {
     let cuadritos = '';
     for (let i = 0; i < 17; i++) {
@@ -226,7 +221,6 @@ function reproductor() {
     camarita.after(repetir);
     repetir.after(subir);
     camarita.remove();
-    document.querySelector('#subir div h4').innerHTML = "Vista Previa";
     subir.addEventListener('click', function () {
         return subirGif(blob);
     });
@@ -251,10 +245,8 @@ function subirHtml2() {
     <h3>Tiempo restante: <s>38 años</s> algunos minutos</h3>
     </div><button id="cancelar">Cancelar</button>`;
     document.getElementById('subir2').remove();
-    document.querySelector('#subir div h4').innerHTML = "Subiendo Guifo";
 
     // let controller = new AbortController();
-    document.querySelector('#subir > div:nth-child(1)').insertAdjacentHTML("afterend", subiendo);
     document.getElementById('repetir').parentNode.remove();
     /*   let abortBtn = document.getElementById('cancelar');
       abortBtn.addEventListener('click', function () {
@@ -364,7 +356,7 @@ async function subir3(numero) {
             document.querySelector('header').nextElementSibling.remove();
         }
 
-        const ids = JSON.parse(localStorage.getItem('ids'))
+        const ids = JSON.parse(localStorage.getItem('misGifos'))
 
         const stringIds = ids.join(',');
 
@@ -446,4 +438,3 @@ function stopRec() {
     this.disabled = true;
     recorder.stopRecording(stopRecordingCallback);
 }
-
