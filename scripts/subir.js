@@ -1,440 +1,313 @@
-function subirHtml() {
-    let cuadroGrande = document.querySelector('div.crear-cuadroGrande')
-    cuadroGrande.style.display = 'none'
-    let chequeo = ''
-    chequeo += `
-   
-    <video autoplay playsinline></video>
-   
-    <div>
-    
-    <button  id="camarita">
-    </button>
-    
-    <button onload="streamVideo()" onclick="grabar2()" id="grabar" class="capturar">
-    GRABAR
-    </button>
-    </div>
-    <div>
+const record = document.querySelector('.record')
+const record_display = record.querySelector('#record_display')
+const record_steps_container = record.querySelector('.record__steps')
+const record_steps_counter = record_steps_container.querySelector('.record__step-counter')
+const record_steps_repeat = record_steps_container.querySelector('.record_step-repeat')
+const record_steps = record_steps_container.querySelectorAll('.record__steps-step')
+const button_record_step = record.querySelector('#button_list')
+
+let button_download_record
+let button_obtain_link_record
+
+let record_display_video
+// record_display.querySelector('.record_display_video')
+
+let button_step = 2
+let recorder //save the record in RTC object
+let timekeeper
+let videoStream
+let file_gif_url
+
+record_steps_counter.innerHTML = "00:00:00"
+let hours = 0
+let minutes = 0
+let seconds = 0
+
+var myGif = JSON.parse(localStorage.getItem("mygifs"))
+
+function clean_element(father) {
+    father.innerHTML = ""
+}
+
+// view record display functions
+
+/* 
+Las vistas son insertadas en:
+#record_display
+*/
+
+function view_1_record(father) {
+    const content = `
+    <div id="show_container" class="record__container--display_messague">
+        <h2>Aquí podrás</h2>
+        <h2>crear tus propios <span>GIFOS</span></h2>
+        <p>¡Crea tu GIFO en sólo 3 pasos!</p>
+        <p>(sólo necesitas una cámara para grabar un video)</p>
     </div>
     `
-    console.log(chequeo);
-    document.getElementById('subir').innerHTML = chequeo;
-    document.getElementById('subir').style.display = 'block';
-
-
+    father.innerHTML = content
 }
-// ----------------------------------
-
-function addCss(fileName) {
-
-    let theme = sessionStorage.getItem("tema");
-    console.log(fileName);
-
-    if (fileName === undefined) {
-        console.log('*************RECARGA**********')
-        if (theme == 'oscuro') {
-            document.styleSheets[1].disabled = true;
-            document.styleSheets[2].disabled = false;
-        } else if (theme == 'claro') {
-            document.styleSheets[1].disabled = false;
-            document.styleSheets[2].disabled = true;
-        }
-    }
-
-    if (fileName == 1 && theme == 'oscuro') {
-        sessionStorage.setItem("tema", "claro");
-        document.styleSheets[1].disabled = false;
-        document.styleSheets[2].disabled = true;
-    } else if (fileName == 2 && theme == 'claro') {
-        sessionStorage.setItem("tema", "oscuro");
-        document.styleSheets[1].disabled = true;
-        document.styleSheets[2].disabled = false;
-    }
-
-}
-window.onload = function () {
-    addCss();
-}
-// --------------------------------------------
-
-var video = document.querySelector('video');
-var dateStarted;
-// *************STREAM VIDEO********************
-function streamVideo() {
-    var constraints = { audio: false, video: { height: { max: 480 } } };
-
-    navigator.mediaDevices.getUserMedia(constraints)
-        .then(function (mediaStream) {
-            var video = document.querySelector('video');
-
-            video.srcObject = mediaStream;
-            video.onloadedmetadata = function (e) {
-                video.play();
-            };
-        })
-        .catch(function (err) { console.log(err.name + ": " + err.message); });
-}
-// *************STREAM VIDEO********************
-
-// *************DURACION**************************
-
-function calculateTimeDuration(secs) {
-    var hr = Math.floor(secs / 3600);
-    var min = Math.floor((secs - (hr * 3600)) / 60);
-    var sec = Math.floor(secs - (hr * 3600) - (min * 60));
-
-    if (min < 10) {
-        min = "0" + min;
-    }
-
-    if (sec < 10) {
-        sec = "0" + sec;
-    }
-
-    if (hr <= 0) {
-        return min + ':' + sec;
-    }
-
-    return hr + ':' + min + ':' + sec;
-}
-// *************DURACION**************************
-
-
-// *************OBJETO RECORDER*************
-
-var tiempo = true;
-function captureCamera(callback) {
-    navigator.mediaDevices.getUserMedia({ audio: false, video: true }).then(function (camera) {
-        callback(camera);
-    }).catch(function (error) {
-        alert('Unable to capture your camera. Please check console logs.');
-        console.error(error);
-    });
-}
-var blob;
-function stopRecordingCallback() {
-    var video = document.querySelector('video');
-    let preview = document.createElement('img');
-    preview.id = "preview";
-    video.after(preview);
-    preview.srcObject = null;
-    video.remove();
-
-    blob = recorder.getBlob();
-    preview.src = URL.createObjectURL(blob);
-    // document.querySelector("video").controls = true;
-    recorder.stopRecording();
-    reproductor();
-    // recorder = null;
-    console.log("------------" + blob.size);
-}
-
-function calculateTimeDuration(secs) {
-    var hr = Math.floor(secs / 3600);
-    var min = Math.floor((secs - (hr * 3600)) / 60);
-    var sec = Math.floor(secs - (hr * 3600) - (min * 60));
-
-    if (min < 10) {
-        min = "0" + min;
-    }
-
-    if (sec < 10) {
-        sec = "0" + sec;
-    }
-
-    if (hr <= 0) {
-        return min + ':' + sec;
-    }
-
-    return hr + ':' + min + ':' + sec;
-}
-
-
-var recorder; // globally accessible
-function grabar2() {
-
-    let camarita = document.getElementById('camarita');
-    let camaritaStop = document.createElement('button');
-    let stop = document.createElement('button');
-    document.getElementById('grabar').remove();
-
-    camaritaStop.id = 'camarita-stop';
-    stop.id = 'stop';
-    camarita.after(camaritaStop);
-    camaritaStop.after(stop);
-    document.getElementById("camarita").remove();
-    document.querySelector('.crear-cuadroGrande div button:nth-child(2)').innerHTML = 'Finalizar';
-    stop.addEventListener("click", function () {
-        return recorder.stopRecording(stopRecordingCallback)
-    });
-
-    captureCamera(function (camera) {
-        var video = document.querySelector('video');
-        video.srcObject = camera;
-        recorder = RecordRTC(camera, {
-            type: 'gif',
-            frameRate: 1,
-            quality: 5,
-            width: 360,
-            hidden: 240,
-            onGifRecordingStarted: function () {
-                console.log('Gif recording started.');
-            }
-
-        });
-
-        recorder.startRecording();
-        dateStarted = new Date().getTime();
-        let capt = document.querySelector('.busqueda div:nth-child(3)');
-        capt.classList.add('timer');
-        (function looper() {
-            if (document.querySelector('video') == null) {
-                return;
-            }
-            document.querySelector('.timer').innerHTML = '00:00:' + calculateTimeDuration((new Date().getTime() - dateStarted) / 1000);
-            setTimeout(looper, 1000);
-        })();
-
-    });
-}
-
-function reproductor() {
-    let cuadritos = '';
-    for (let i = 0; i < 17; i++) {
-        cuadritos += `<div></div> \n`;
-    }
-    let progressBar = `<div id="contenedor"><div id="flecha"></div><div id="cargando"></div></div>`;
-    console.log('***************************************');
-    console.log(progressBar);
-    let camarita = document.getElementById('camarita-stop');
-    let subir = document.createElement('button');
-    subir.id = 'subir2';
-    let repetir = document.createElement('button');
-    repetir.id = 'repetir';
-    repetir.innerText = 'Repetir Captura';
-    subir.innerText = 'Subir Guifo';
-    // document.querySelector('.timer').after(progressBar);
-    document.querySelector('.timer').insertAdjacentHTML("afterend", progressBar);
-    document.querySelector('#cargando').innerHTML = cuadritos;
-    document.getElementById('stop').remove();
-    camarita.after(repetir);
-    repetir.after(subir);
-    camarita.remove();
-    subir.addEventListener('click', function () {
-        return subirGif(blob);
-    });
-    repetir.addEventListener('click', function () {
-        return location.reload(true);
-    })
-};
-let key = "aiSyvuotTBkiW8LiDS2grIV7FM6KZv9T";
-
-function subirHtml2() {
-    ['preview', 'contenedor'].forEach(function (id) {
-        document.getElementById(id).style.display = "none";
-    });
-    let cuadritos = '';
-    for (let i = 0; i < 23; i++) {
-        cuadritos += `<div></div> \n`;
-    }
-    let subiendo = `<div class="globo">
-    <img src="/assets/globe_img.png" alt="globo terraqueo">
-    <h2>Estamos subiendo tu guifo…</h2>
-    <div class="progress-bar-dos">${cuadritos}</div>
-    <h3>Tiempo restante: <s>38 años</s> algunos minutos</h3>
-    </div><button id="cancelar">Cancelar</button>`;
-    document.getElementById('subir2').remove();
-
-    // let controller = new AbortController();
-    document.getElementById('repetir').parentNode.remove();
-    /*   let abortBtn = document.getElementById('cancelar');
-      abortBtn.addEventListener('click', function () {
-          console.log('Subida Cancelada!');
-          controller.abort();
-      }); */
-    console.log("hecho");
-
-}
-var idArray = new Array();
-async function subirGif(gif) {
-    subirHtml2();
-    const controller = new AbortController();
-    const signal = controller.signal;
-    let abortBtn = document.getElementById('cancelar');
-    abortBtn.addEventListener('click', function () {
-        if (controller) controller.abort();
-        console.log('Subida Cancelada!');
-        setTimeout(window.location.reload(true), 3000);
-    });
-    var formdata = new FormData();
-    formdata.append("api_key", "aiSyvuotTBkiW8LiDS2grIV7FM6KZv9T");
-    formdata.append("file", blob);
-    formdata.append("tags", "camiloandresb266");
-
-    var requestOptions = {
-        method: 'POST',
-        body: formdata,
-        redirect: 'follow',
-        signal: signal,
-    };
-    fetch("https://upload.giphy.com/v1/gifs\n", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-            let gifId = result.data.id;
-            let string = JSON.stringify(gifId).replace(/\"/g, "");
-
-            let ids = localStorage.getItem('ids') || '[]';
-            //   JSON.parse(ids).concat(string)
-            localStorage.setItem('ids', JSON.stringify(JSON.parse(ids).concat(string)));
-            console.log(result);
-            creado();
-        })
-        .catch(error => console.log('error', error));
-
-}
-
-function creado() {
-    let imagen = URL.createObjectURL(blob);
-    console.log(imagen);
-    document.querySelector('#subir div h4').innerHTML = "Guifo Subido Con Éxito"
-    let exito = `<div class="exito">
-    <img src="${imagen}" alt="">
-    <h2>Guifo Subido Con Éxito</h2>
-    <button onclick="copiar()" id="copiar">Copiar Enlace Guifo</button>
-    <button onclick="descargar()" id="descargar">Descargar Guifo</button>
-    <button onclick="listo()" id="listo">Listo</button>
-    </div>`;
-    console.log(exito);
-    document.getElementById('subir').style.width = '50vw';
-    document.getElementById('subir').style.height = '391px';
-    document.getElementById('subir').style.marginBottom = '180px';
-
-    document.querySelector('.globo').style.display = "none";
-    document.querySelector('.timer').style.display = "none";
-    document.querySelector('.sugerencias>div:nth-child(2)').insertAdjacentHTML("afterend", exito);
-    subir3();
-}
-// --------------------------------------
-function listo() {
-    document.getElementById('subir').style.display = 'initial';
-    document.getElementById('subir').style.visibility = 'hidden';
-}
-//****************ULTIMO ESTADO************** */
-function fecthcUrls(tipo, id) {
-    return new Promise(async (resolve, reject) => {
-        if (tipo == 1) {
-            try {
-                let url2 = await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=aiSyvuotTBkiW8LiDS2grIV7FM6KZv9T`);
-
-                let response = await url2.json();
-
-                resolve([response.data.images.original.url])
-            } catch (error) {
-                reject(error)
-            }
-        } else {
-            try {
-                let url2 = await fetch(`http://api.giphy.com/v1/gifs?api_key=aiSyvuotTBkiW8LiDS2grIV7FM6KZv9T&ids=${id}`);
-
-                let response = await url2.json();
-
-                const result = response.data.map(element => element.images.original.url)
-
-                resolve(result)
-            } catch (error) {
-                reject(error)
-            }
-        }
-    })
-
-}
-
-async function subir3(numero) {
-    try {
-        if (numero) {
-            document.querySelector('header').nextElementSibling.remove();
-        }
-
-        const ids = JSON.parse(localStorage.getItem('misGifos'))
-
-        const stringIds = ids.join(',');
-
-        let urls = []
-
-        if (ids.length > 1) {
-            urls = await fecthcUrls(2, stringIds)
-        } else {
-            urls = await fecthcUrls(1, stringIds)
-        }
-        document.getElementById('cancelar').remove()
-        let ultimoCuadro = `
-    <div class="sugerimos">
-        <h3>
-            Mis guifos:
-        </h3>
+function view_2_record(father) {
+    const content = `
+    <div id="show_container" class="record__container--display_messague">
+        <h2>¿Nos das acceso</h2>
+        <h2>a tu cámara?</h2>
+        <p>El acceso a tu camara será válido sólo</p>
+        <p>por el tiempo en el que estés creando el GIFO.</p>
     </div>
-    <section class="tendencias2" id="tendencias3">`;
+    `
+    father.innerHTML = content
+}
+function view_3_record(father) {
+    const content = `
+    <video class="record_display_video" src="./"></video>
+    `
+    father.innerHTML = content
+}
+function view_4_record(father) {
+    const content = `
+    <video class="record_display_video" src="./"></video>
+    <div id="show_container" class="record__container--display_cover">
+        <div class="record__container--messague_check alself-center">
+            <img id="loader" src="/assets/loader.svg" alt="loader">
+            <p class="record__container--messague_check-text">Estamos subiendo tu GIFO</p>
+        </div>
+    </div>
+    `
+    father.innerHTML = content
+}
+function view_5_record(father) {
+    const content = `
+    <img class="record_display_video" src="${file_gif_url}" />
+    <div id="show_container" class="record__container--display_cover">
+        <div class="record__container--options">
+            <div id="download-record" aria-labelledby="download-record"><a href="#" download></a></div>
+            <div id="link-record" class="link-record" aria-labelledby="delete_icon"></div>
+        </div>
+        <div class="record__container--messague_check">
+            <img src="/assets/check.svg" alt="check">
+            <p class="record__container--messague_check-text">GIFO subido con éxito</p>
+        </div>
+    </div>
+    `
+    father.innerHTML = content
+}
 
-        urls.reverse().forEach((url) => {
-            ultimoCuadro += `
-        <div class="gif-tendencias">
-            <img src="${url}" alt="">
-           
-        </div>`
-        })
+// steps functions
+function asign_step (index) {
+    record_steps[index].classList.add('record__steps-step-active')
+}
+function remove_step (index) {
+    record_steps[index].classList.remove('record__steps-step-active')
+}
 
-        ultimoCuadro += `<section/>`
-        // document.querySelector('header').insertAdjacentHTML("afterend", ultimoCuadro);
-        if (numero) {
-            document.getElementById('despliegue').insertAdjacentHTML("afterend", ultimoCuadro);
-        } else {
-            document.getElementById('subir').insertAdjacentHTML("afterend", ultimoCuadro);
+// visibility of counter and repeat
+// toggle_show_empty_messague(record_steps_repeat,'block')
+
+// buttons_visibility ----------------------------------------------------------------------
+function asign_button_aspect(num) {
+    let content = "<p></p>"
+    clean_element(button_record_step)
+    switch (num) {
+        case 1:
+            button_record_step.classList.add('visible')
+            content = `<p>comenzar</p>`
+            break
+        case 2:
+            button_record_step.classList.remove('visible')
+            break
+        case 3:
+            content = `<p>grabar</p>`
+            button_record_step.classList.add('visible')
+            break
+        case 4:
+            content = `<p>finalizar</p>`
+            break
+        case 5:
+            content = `<p>subir gifo</p>`
+            break
+        case 6:
+            button_record_step.classList.remove('visible')
+            break
+        default:
+            console.log(`case ${num} no esta definido en la secuencia`)
+    }
+    button_record_step.innerHTML = content
+}
+
+//initial conditions
+view_1_record(record_display)
+asign_button_aspect(1)
+
+// timer ------------------------------------------------
+function prependZeros(num){
+    //function that format the time
+    var str = ("" + num)
+    return (Array(Math.max(3-str.length, 0)).join("0") + str)
+}
+
+let timekeeperFunction = ()=>{
+    seconds +=1 
+    //verificación segundos
+    if(seconds === 60){
+        seconds = 0
+        minutes += 1
+    }
+    if(minutes === 60){
+        minutes = 0
+        hours += 1
+    }
+    if(hours === 24) {
+        hours = 0
+    }
+    let hs = prependZeros(hours)
+    let mm = prependZeros(minutes)
+    let ss = prependZeros(seconds)
+    record_steps_counter.innerHTML = hs +":"+mm+":"+ss
+    record_steps_counter.style.display = "flex"
+}
+
+//record proccess ------------------------------------------------------
+
+//Tiene toda la info del gif creado
+let form = new FormData();
+//url de la API search gifs GIPHY
+const APIKEY = "TRREVKqasFrbDKY4ZfktanXZ7CTfZUTM"
+let urlUploadGif = `https://upload.giphy.com/v1/gifs?api_key=${APIKEY}`
+
+function accessCam (){
+    // Habilita permisos
+    navigator.mediaDevices.getUserMedia({
+        // devuelve promesa
+        audio: false, 
+        // sin audio
+        video: {
+           height: { max: 320 }
         }
-    } catch (error) {
-        console.log('error', error);
+        // medidas para el video
+     })
+     .then(responsesStream =>{
+        sequence_record(button_step)
+        showRecElements(responsesStream)
+     })
+}
+
+let showRecElements = (stream)=>{
+    // guarda el video y lo conecta a los elementos
+    record_display_video.srcObject = stream //llamar record_display_video cuando este cargado
+    record_display_video.play()
+    //almacenar respuesta
+    videoStream = stream
+}
+
+//grabar video
+let streamVideo = ()=>{
+    // create RTC object (simplifies recording)
+    recorder = RecordRTC(videoStream, {
+        type: 'gif',
+        frameRate: 1,
+        quality: 10,
+        width: 360,
+        hidden: 240,
+        onGifRecordingStarted: function() {
+        console.log('started')
+    },
+    })
+    recorder.startRecording();
+    timekeeper =  setInterval(timekeeperFunction,1000) // timer
+    //active button
+}
+
+function obtain_link_record(text) {
+    navigator.clipboard.writeText(text)
+    .then(() => {
+        console.log('Text copied to clipboard');
+    })
+    .catch(err => {
+        console.log('Error in copying text: ', err);
+    })
+}
+
+function sequence_record(step) {
+    if (step === 2) {
+        // permisos de camara
+        view_2_record(record_display)
+        asign_button_aspect(2)
+        asign_step(0)
+        button_step += 1
+        accessCam()
+    } 
+    else if (step===3) {
+        // video mostrado
+        view_3_record(record_display)
+        asign_button_aspect(3)
+        remove_step(0)
+        asign_step(1)
+        record_display_video = record_display.querySelector('.record_display_video')
+        button_step += 1
     }
+    else if (step===4) {
+        // grabar
+        streamVideo()
+        asign_button_aspect(4)
+        button_step += 1
+    }
+    else if (step===5) {
+        // stop
+        asign_button_aspect(5)
+  
+        clearInterval(timekeeper) // restart counter
+        button_step += 1
+        recorder.stopRecording(()=>{
+            let blob = recorder.getBlob()
+            form.append('file', blob, 'myGif.gif');
+            console.log(form.get('file'))
+        })
+    }
+    else if (step===6){
+        // upload gif
+        videoStream.getTracks()[0].stop()
+        view_4_record(record_display)
+        asign_button_aspect(6)
+        remove_step(1)
+        asign_step(2)
 
-}
+        fetch(urlUploadGif, {
+            method:"POST",
+            body: form 
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data_new =>{
+            //Habilitar vista 5
+            file_gif_url = `https://media.giphy.com/media/${data_new.data.id}/giphy.gif`
+            view_5_record(record_display)
+            button_download_record = record_display.querySelector('#download-record')
+            button_obtain_link_record = record_display.querySelector('#link-record')
+            myGif.push(data_new.data.id)
+            localStorage.setItem("mygifs",JSON.stringify(myGif));
 
-
-
-
-function copiar() {
-    let imagenBlob = document.querySelector('.gif-tendencias img').src;
-    const texto = document.createElement('textarea');
-    texto.value = imagenBlob;
-    document.body.appendChild(texto);
-    texto.select();
-    document.execCommand('copy');
-    document.body.removeChild(texto);
-
-}
-
-function descargar() {
-    console.log(blob)
-    invokeSaveAsDialog(blob)
-}
-
-
-
-function playPause() {
-    var image = document.getElementById("likes"),
-        button = document.getElementById("pause");
-
-    if (image.classList && image && button) {
-        button.onclick = function () {
-            if (this.value == 'pause') {
-                image.classList.add('pause');
-                this.value = 'play';
-            } else {
-                image.classList.remove('pause');
-                this.value = 'pause';
+            // buttons events
+            button_download_record.onclick = () => {
+                recorder.save('gif')
             }
-        };
+            button_obtain_link_record.onclick = () => {
+                obtain_link_record(file_gif_url)
+            }
+        })
     }
 }
-function stopRec() {
-    this.disabled = true;
-    recorder.stopRecording(stopRecordingCallback);
+
+button_record_step.onclick = () => {
+    sequence_record(button_step)
+}
+record_steps_repeat.onclick = () => {
+    button_step = 3
+    clearInterval(timekeeper)
+    hours = 0
+    minutes = 0
+    seconds = 0
+    accessCam()
+    sequence_record(button_step)
 }

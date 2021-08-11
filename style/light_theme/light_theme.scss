@@ -77,22 +77,30 @@ header{
 
 }
 
+.button_more{
 
+    color: $purple_primary;
+    border: 1px solid $purple_primary;
+
+    &:hover{
+
+        background-color: $purple_primary;
+        color: white;
+        cursor: pointer;
+    }
+
+}
 // UPLOAD
-.main_upload{
+.container-create-gif{
 
-    #comenzar, .capturar, #stop, #subir2{
+    
 
-        color: $purple_primary;
-        border: 1px solid $purple_primary;
-
-        &:hover{
-
-            background-color: $purple_primary;
-            color: white;
-            cursor: pointer;
-        }
-
+    .button_controller{
+        border-color: $purple_primary;
+    }
+    
+    .divisor{
+        border-color: $purple_primary;
     }
 
     .timer{

@@ -66,18 +66,26 @@ header {
   color: #572EE5;
 }
 
-.main_upload #comenzar, .main_upload .capturar, .main_upload #stop, .main_upload #subir2 {
+.button_more {
   color: #572EE5;
   border: 1px solid #572EE5;
 }
 
-.main_upload #comenzar:hover, .main_upload .capturar:hover, .main_upload #stop:hover, .main_upload #subir2:hover {
+.button_more:hover {
   background-color: #572EE5;
   color: white;
   cursor: pointer;
 }
 
-.main_upload .timer {
+.container-create-gif .button_controller {
+  border-color: #572EE5;
+}
+
+.container-create-gif .divisor {
+  border-color: #572EE5;
+}
+
+.container-create-gif .timer {
   color: #572EE5;
   font-weight: 500;
 }

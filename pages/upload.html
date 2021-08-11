@@ -47,45 +47,54 @@
     </header>
 
 
-    <main class="main_upload">
-
-        <section class="section_a">
-            <img src="../assets/camara.svg" alt="camara_logo" class="camara_logo">
-            <div class="busqueda sugerencias crear-cuadroGrande" id="subir">
-            </div>
+    <main class="record">
+        <div class="animation__container">
+          <div class="animation__container--wrapper">
+              <div class="animation__container--wheels">
+                  <img class="animation__container--wheels_cinta1" src="/assets/element_cinta1.svg" alt="cinta_1">
+                  <img class="animation__container--wheels_cinta2" src="/assets/element_cinta2.svg" alt="cinta_2">
+              </div>
+              <img class="animation__container--camera" src="/assets/element-camara.svg" alt="element_camara">
+          </div>
+          <img class="animation__container--luz" src="/assets/element-luz-camara.svg" alt="luz_camara">
+        </div>
+        <div class="record__container">
+          <div class="record__container_border top left"></div>
+          <div class="record__container_border top right"></div>
+          <div class="record__container_border bottom right"></div>
+          <div class="record__container_border bottom left"></div>
+          <div id="record_display" class="record__container--display">
+        <div id="show_container" class="record__container--display_messague">
+            <h2>Aquí podrás</h2>
+            <h2>crear tus propios <span>GIFOS</span></h2>
+            <p>¡Crea tu GIFO en sólo 3 pasos!</p>
+            <p>(sólo necesitas una cámara para grabar un video)</p>
+        </div>
+        </div>
+        </div>
     
-            
-            <img src="../assets/pelicula.svg" alt="pelicula_logo" class="pelicula_logo">
-
-        </section>
-
-        <section class="buttons">
-
-            <div class="paginator">
-                <p class="selected">1</p>
-                <p class="unselected">2</p>
-                <p class="unselected">3</p>
-            </div>
-
-
-            <div class="divisor"></div>
-            <button onclick="subirHtml(); streamVideo();" id="comenzar">
-                COMENZAR
-            </button>
-
-        </section>
- 
-        
-        
-    </main>
-
+        <div class="record__steps">
+          <div class="record__steps--wrapper">
+            <div id="step_1" class="record__steps-step">1</div>
+            <div id="step_2" class="record__steps-step">2</div>
+            <div id="step_3" class="record__steps-step">3</div>
+          </div>
+          <div class="record__step-counter">00:00:00</div>
+          <div class="record_step-repeat"><p>repetir captura</p></div>
+        </div>
+        <hr class="record__steps-divisor">
+        <img class="film_roll" src="/assets/pelicula.svg" alt="rollo_de_pelicula">
+    
+        <div id="button_list" class="button_more visible"><p class="button_controller">comenzar</p></div>
+    
+      </main>
 
     <footer>
         <h2>Compartir en:</h2>
         <div class="social_media">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>       
+            <i class="fab fa-facebook-f" onclick="window.location.href = 'https://www.facebook.com/GIPHY'"></i>
+            <i class="fab fa-twitter" onclick="window.location.href = 'https://twitter.com/giphy?lang=es'"></i>
+            <i class="fab fa-instagram" onclick="window.location.href = 'https://www.instagram.com/giphy/'"></i>       
         </div>
         <p>© GIFOS 2020 All Rights Reserved.</p>
     </footer>
@@ -94,7 +103,7 @@
     <!-- scripts-->
 
     <script src="../scripts/funciones_upload_page.js"></script>
-    <script src="../scripts/RecordRTC.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="../scripts/subir.js"></script>
 </body>
 

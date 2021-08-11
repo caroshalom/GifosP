@@ -2,7 +2,7 @@
 const renderMisGIfs = async () => {
     
     let content = ""
-    misGifsList = JSON.parse(localStorage.getItem("misGifos")) 
+    misGifsList = JSON.parse(localStorage.getItem("mygifs")) 
 
     if(misGifsList && misGifsList.length !== 0){
         
@@ -66,8 +66,8 @@ window.onload = () => {
     if(!localStorage.getItem("favorites")){
         localStorage.setItem("favorites", "[]")
     }
-    if(!localStorage.getItem("misGifos")){
-        localStorage.setItem("misGifos", "[]")
+    if(!localStorage.getItem("mygifs")){
+        localStorage.setItem("mygifs", "[]")
     }
 
 }

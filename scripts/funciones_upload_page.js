@@ -35,7 +35,10 @@ function changeAssests(theme){
         // CREATE GIFO BTN
         const crear_btn = document.querySelector(".create_btn")
         crear_btn.setAttribute("src","../assets/CTA-crear-gifo-active.svg")
-
+        document.querySelector(".animation__container--camera").setAttribute("src", "../assets/element-camara.svg" )
+        document.querySelector(".animation__container--wheels_cinta2").setAttribute("src", "../assets/element_cinta2.svg" )
+        document.querySelector(".animation__container--wheels_cinta1").setAttribute("src", "../assets/element_cinta1.svg" )
+        document.querySelector(".film_roll").setAttribute("src" , "../assets/pelicula.svg")
 
         
 
@@ -49,6 +52,11 @@ function changeAssests(theme){
         // CREATE GIFO BTN
         const crear_btn = document.querySelector(".create_btn")
         crear_btn.setAttribute("src","../assets/CTA-crear-gifo-active-modo-noc.svg")
+
+        document.querySelector(".animation__container--camera").setAttribute("src", "../assets/element-camara.svg" )
+        document.querySelector(".animation__container--wheels_cinta2").setAttribute("src", "../assets/element_cinta2-modo-noc.svg" )
+        document.querySelector(".animation__container--wheels_cinta1").setAttribute("src", "../assets/element_cinta1-modo-noc.svg" )
+        document.querySelector(".film_roll").setAttribute("src" , "../assets/pelicula-modo-noc.svg")
     }
 }
 

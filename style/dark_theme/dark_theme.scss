@@ -116,6 +116,44 @@ header{
     }
 }
 
+
+// UPLOAD
+.record__container--display_messague h2 {
+    color: $text_normal;
+    font-size: 25px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.record__container--display_messague p{
+    color: $text_normal;
+}
+
+.record__container{
+    border-color: $text_normal;
+}
+
+.record__steps-step{
+    border-color: $text_normal;
+    color: $text_normal;
+}
+
+.record__steps-divisor{
+    background-color: $text_normal;
+}
+
+.button_more{
+
+    color: $text_normal;
+    border: 1px solid $text_normal;
+
+    &:hover{
+
+        background-color: $text_normal;
+        color: black;
+        cursor: pointer;
+    }
+
+}
 footer{
 
     color: white;

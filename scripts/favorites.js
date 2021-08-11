@@ -66,10 +66,3 @@ button_favorites.addEventListener("click", async () => {
     gifButtonsFunctions()
     gifHover() 
 })
-
-window.onload = () => {
-    setTheme()
-    if(!localStorage.getItem("favorites")){
-        localStorage.setItem("favorites", "[]")
-    }
-}

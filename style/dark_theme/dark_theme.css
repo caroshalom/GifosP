@@ -99,6 +99,40 @@ header {
   color: black !important;
 }
 
+.record__container--display_messague h2 {
+  color: #fff;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.record__container--display_messague p {
+  color: #fff;
+}
+
+.record__container {
+  border-color: #fff;
+}
+
+.record__steps-step {
+  border-color: #fff;
+  color: #fff;
+}
+
+.record__steps-divisor {
+  background-color: #fff;
+}
+
+.button_more {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.button_more:hover {
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+}
+
 footer {
   color: white;
 }

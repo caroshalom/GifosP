@@ -42,8 +42,11 @@ const renderCarousel = (carousel) => {
     
 }
 
+
 const carousel = document.querySelector(".carousel-gif-tendencias")
 renderCarousel(carousel)
+
+
 
 
 
