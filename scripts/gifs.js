@@ -112,6 +112,8 @@ const gifButtonsFunctions = () => {
             let newFavlist = favList.filter( element => element !== id)
             localStorage.setItem("favorites", JSON.stringify(newFavlist))
             window.location.reload(true)
+
+            
         })
     });
 
@@ -212,9 +214,10 @@ const gifButtonsFunctions = () => {
 
             
             let id = element.parentElement.parentElement.parentElement.id
-            let mygifsList = JSON.parse(localStorage.getItem("misGifos"))
-            let newmygifsList = mygifsList.filter( element => element !== id)
-            localStorage.setItem("misGifos", JSON.stringify(newmygifsList))
+            let mygifsList = JSON.parse(localStorage.getItem("mygifs"))
+            let newmygifsList = mygifsList.filter(gif => gif !== id)
+
+            localStorage.setItem("mygifs", JSON.stringify(newmygifsList))
             window.location.reload(true)
         })
     });

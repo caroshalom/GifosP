@@ -68,6 +68,14 @@ async function searchGif(termino, limit) {
     })
 }
 
+
+// BOTON DE BUSQUEDA
+const button_search = document.querySelector(".search_button")
+button_search.addEventListener("click", () => {
+
+    let termino = document.querySelector(".input_search").value
+    searchGif(termino, 12)
+})
 async function cuadrosBusqueda(numero) {
     try {
         desaparecer(1);
